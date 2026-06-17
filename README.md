@@ -2,7 +2,7 @@
 
 Two Claude Code plugins for Bolt.new and StackBlitz content. One writes, one edits. Install both and they form a make-then-fix workflow.
 
-- **write-strike-kit** writes the draft (8 skills behind one routing spine).
+- **write-strike-kit** writes the draft (9 skills behind one routing spine).
 - **mr-gay** edits the draft (verdict-first review, then quick-fix or full report).
 
 ## Install (one time)
@@ -50,6 +50,7 @@ write-strike is the front door; it loads the others only when a job needs them.
 | bolt-buyer-personas | Audience profiles and readability calibration |
 | bolter-tones | Individual team-member voices |
 | bolt-content-formats | Templates for fixed-shape content (customer story, webinar, sales enablement, creator brief) |
+| bolt-blog | The blog content-type default: write, brief, optimize, outrank a competitor |
 | ogilvy-copywriting | Persuasion principles, plus an optional voice |
 | bolt-stop-slop | The AI-tells audit |
 | bolt-seo-geo | Live SEO/GEO data and tooling (setup below) |

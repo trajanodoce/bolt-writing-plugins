@@ -20,7 +20,7 @@ VERSION = sys.argv[1] if len(sys.argv) > 1 else "1.0.0"
 
 KIT = ["write-strike", "bolt-TOV-and-guidelines", "bolter-tones",
        "bolt-buyer-personas", "bolt-stop-slop", "bolt-content-formats",
-       "ogilvy-copywriting", "bolt-seo-geo"]
+       "ogilvy-copywriting", "bolt-seo-geo", "bolt-blog"]
 STANDALONE = ["mr-gay"]
 
 EXCLUDE_NAMES  = {".last-source-check", ".DS_Store", "__pycache__", ".git"}

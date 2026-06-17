@@ -48,7 +48,7 @@ The user's first message tells you what they need. Detect the content type, then
 | Type | Trigger phrases | Workflow | Reference |
 |------|----------------|----------|-----------|
 | Content ideation | "brainstorm", "content ideas", "ideation", "what should we write", "topic ideas", "content plan" | Ideation | None |
-| Blog | "blog post", "article", "post" | Full | `${CLAUDE_PLUGIN_ROOT}/skills/write-strike/references/SEO-GEO-drafting.md` |
+| Blog | "blog post", "article", "post", "content brief", "blog brief", "outrank" | Delegate | Hand to the **bolt-blog** skill (the robust blog default: it owns the blog shape, brief, optimize, and outrank workflows). |
 | Customer story | "customer story", "case study" | Template | `${CLAUDE_PLUGIN_ROOT}/skills/bolt-content-formats/references/customer-story-template.md` |
 | Social | "social", "LinkedIn", "X post", "tweet", "Reddit" | Light | None |
 | Email | "email", "newsletter", "drip", "email sequence" | Light | None |
@@ -72,6 +72,7 @@ The user's first message tells you what they need. Detect the content type, then
 - **Medium** = intake → outline → draft → audit → present (skip deep research)
 - **Light** = intake → draft → audit → present (skip research and outline)
 - **Template** = load the content-type's structural scaffold from the `bolt-content-formats` skill → work through its checklist → draft → audit → present
+- **Delegate** = hand the whole job to a dedicated skill that owns this content type (blog → `bolt-blog`); don't run write-strike's generic workflow for it
 
 If the content type isn't clear, ask.
 

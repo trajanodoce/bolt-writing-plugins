@@ -314,7 +314,7 @@ Keep it scannable. The user should be able to approve, revise, or redirect in un
 
 Apply every rule from the bolt-TOV-and-guidelines style guide (`${CLAUDE_PLUGIN_ROOT}/skills/bolt-TOV-and-guidelines/SKILL.md`). That file is the single source of truth for tone of voice, editorial guidelines, and writing tips. The stop-slop / AI-tell filter lives in the `bolt-stop-slop` skill. Do not duplicate those rules here. Read them from the source.
 
-**For blog, long-form, and website copy:** also apply the GEO/AEO writing rules in `${CLAUDE_PLUGIN_ROOT}/skills/write-strike/references/SEO-GEO-drafting.md`. These rules govern passage-level extractability, answer-first structure, information gain, and AI citation optimization. They layer on top of the TOV guidelines.
+**For blog, long-form, and website copy:** also apply the GEO/AEO writing rules in `${CLAUDE_PLUGIN_ROOT}/skills/write-strike/references/SEO-GEO-drafting.md`. These rules govern passage-level extractability, answer-first structure, information gain, and AI citation optimization. They layer on top of the TOV guidelines. **Citation exception:** the GEO inline-attribution rule applies to blog and website copy only; long-form uses the Chicago superscript + Works Cited appendix format instead (see bolt-TOV-and-guidelines).
 
 ### The Ogilvy gut-check (every persuasion piece, regardless of voice)
 
@@ -352,7 +352,7 @@ If a person's voice is selected, read their tone profile from the bolter-tones s
 - Open with a hook, not a summary.
 - H2/H3 subheads. 800-1,500 words default.
 - End with a clear CTA.
-- Bibliography (Chicago Manual of Style) if citing external sources.
+- Citations: inline parenthetical naming the source at the end of the sentence, hyperlinked to the original. Example: "(Forrester)". No footnotes or bibliography. See bolt-TOV-and-guidelines (Bibliography and attribution).
 
 ### Customer story-specific
 - Follow the nine-section structure in `${CLAUDE_PLUGIN_ROOT}/skills/bolt-content-formats/references/customer-story-template.md`.
@@ -378,10 +378,11 @@ Read `${CLAUDE_PLUGIN_ROOT}/skills/write-strike/references/web-copy-best-practic
 Additional rules for all website copy:
 - Headline casing on heroes and headers.
 - Show the product. Screenshots, demos, real output. No stock illustrations.
+- Citations: inline and hyperlinked, never superscripts or a works-cited block. Label and link first-party data. Cite sparingly on conversion pages (hero, pricing, landing), more freely on content-style pages (industry, solution, persona, research hubs); keep each claim and its source in the same sentence. See bolt-TOV-and-guidelines (Bibliography and attribution).
 
 ### Long-form-specific
 - Structured with chapters or major sections.
-- Bibliography required (Chicago Manual of Style).
+- Citations: superscript in-text numbers tied to a Works Cited appendix, Chicago Manual of Style. Long-form is exempt from the GEO inline-attribution rule. See bolt-TOV-and-guidelines (Bibliography and attribution).
 - Balance depth with readability. No padding.
 
 ### Survey report-specific

@@ -115,6 +115,16 @@ Stress position governs how a sentence ends. This governs how it starts, and whe
 
 Every piece of writing should leave the reader with one thing they didn't know or hadn't considered before. After reading a draft, ask: what's the single takeaway? If you can't identify it, or if there are five competing candidates, the piece is trying to do too much. Report this clearly. It's one of the most valuable things you can tell a writer, and one of the hardest to see from inside the draft.
 
+### Citation format check
+
+Citations are part of claims-and-proof, and the right *format* depends on the content type. First confirm every factual claim, stat, or direct quote has a credible source, and that it points to the **origin, not the middleman** (a Forrester stat cited to Forbes is a Yellow flag). Then check the format matches the type. The source of truth is bolt-TOV-and-guidelines, "Bibliography and attribution":
+
+- **Long-form** (ebook, whitepaper, guide, report): superscript in-text numbers tied to a **Works Cited appendix**, Chicago Manual of Style. A missing appendix, un-numbered claims, or inconsistent Chicago formatting are flags.
+- **Blog:** inline **parenthetical naming the source**, hyperlinked to the original. A blog carrying footnotes or a bibliography is the wrong format (Yellow); an unlinked source name is Blue.
+- **Website:** inline and hyperlinked, light, with first-party data labeled and linked. Superscripts or a works-cited block on a web page is the wrong format.
+
+Flag mismatches at the appropriate tier; a missing source on a load-bearing claim is Red. Don't reformat by hand unless asked: name the type, name the mismatch, point to the rule.
+
 ### Readability scoring
 
 Always run the bundled readability script on every edit and diagnostic pass. Pipe the draft text or pass the file path:

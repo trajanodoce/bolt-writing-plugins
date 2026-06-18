@@ -63,9 +63,13 @@ Use the Oxford comma in all content, all the time.
 All headlines, headers, and subheads use sentence casing. Exception: website heroes and certain creative assets may use headline casing.
 
 ### Bibliography and attribution
-Any long-form asset (ebook, whitepaper, guide, manual) should have a bibliography. Use Chicago Manual of Style for citation formatting.
+**Always cite the origin, not the middleman.** Direct quotes and statistics are attributed to their original source. If you found a statistic in Forbes from a Forrester report, confirm it at the source and cite the Forrester report, not the Forbes article. Prefer primary sources and first-party data.
 
-Direct quotes or statistics should always be attributed to their original source. If you found a statistic in Forbes from a Forrester report, confirm the information from the original source and cite the Forrester report, not the Forbes article.
+**Citation format depends on the content type:**
+
+- **Long-form** (ebook, whitepaper, guide, manual, report): superscript in-text numbers tied to a **Works Cited appendix** at the end, formatted in **Chicago Manual of Style**. These are downloadable assets, so the academic treatment fits, and they are exempt from the inline-attribution rule below.
+- **Blog:** inline **parenthetical naming the source** at the end of the sentence, hyperlinked to the original. Example: "...cut onboarding time by 40% (Forrester)." No footnotes, no bibliography.
+- **Website:** inline and **hyperlinked**, never superscripts or a works-cited block. Label and link first-party data ("Based on Bolt's 2026 data" links to a methodology or report page). Cite sparingly on conversion pages (hero, pricing, landing) and more freely on content-style pages (industry, solution, persona, research hubs). Keep each claim and its source in the same sentence.
 
 ### US vs. UK spelling
 Use US spelling as the default for all content, unless:

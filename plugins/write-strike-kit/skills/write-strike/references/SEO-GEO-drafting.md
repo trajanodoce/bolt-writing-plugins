@@ -28,7 +28,7 @@ Phrase headers as the question a person would actually type or ask, in their wor
 Replace every vague claim with a number, a unit, context, and an inline source. This one habit feeds Google's Experience signal and the top AI-citation levers (statistics, quotations, cited sources) simultaneously.
 - Weak: "Websites can get expensive." / "Studies show AI improves productivity."
 - Strong: "A small business website from an agency typically costs $8,000 to $30,000 in 2026." / "In our 2026 onboarding of ~40 B2B accounts, imports failed most often at the data step."
-Attribute inline, in the same sentence or passage as the claim ("according to [named source, year]"), never in a footnote or a separate references block. Prefer primary sources and first-party data.
+Attribute inline, in the same sentence or passage as the claim ("according to [named source, year]"), hyperlinked to the original source. For web-published content (blogs and website pages), never use a footnote or a separate references block; inline attribution is itself the citation lever. (Exception: downloadable long-form assets such as ebooks, whitepapers, guides, and reports follow the Chicago superscript plus Works Cited appendix format in bolt-TOV-and-guidelines, since they are not competing for AI citations.) Prefer primary sources and first-party data.
 
 ### 4. Information gain
 Every section must add something that does not already exist on the internet: an original observation, a real workflow, an actual cost breakdown, an honest tradeoff, a before/after with specifics. If a section could be written by someone who has never used the product, it adds nothing and earns nothing.

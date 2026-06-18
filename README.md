@@ -17,7 +17,11 @@ In Claude Code, add this marketplace, then install both plugins:
 
 You will be asked to trust the marketplace the first time. After that you are set.
 
-> This repo is private. If you cannot add the marketplace, ask Taylor to invite you as a collaborator.
+> **This repo is private**, so two things have to be true before Step 1:
+> 1. You have a **collaborator invite** to this repo (ask Taylor) and you've accepted it.
+> 2. Your git is **signed in to GitHub** on this machine — run `gh auth login`, or have an SSH key on your GitHub account.
+>
+> If `/plugin marketplace add` fails, it's almost always one of those. Quick test: you should be able to run `git clone git@github.com:trajanodoce/bolt-writing-plugins.git`. Fix the access, then retry Step 1.
 
 ## How to use them
 

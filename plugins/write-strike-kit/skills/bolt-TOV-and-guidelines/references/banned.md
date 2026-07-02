@@ -38,6 +38,7 @@ These add no meaning. Delete them.
 ## Dead AI language
 
 - "In today's [anything]..."
+- "In plain English"
 - "It's important to note that..." / "It's worth noting..."
 - "Delve" / "Dive into" / "Unpack"
 - "Landscape" / "Realm" / "Robust"

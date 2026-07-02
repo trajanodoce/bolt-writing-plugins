@@ -53,18 +53,17 @@ The user's first message tells you what they need. Detect the content type, then
 | Social | "social", "LinkedIn", "X post", "tweet", "Reddit" | Light | None |
 | Email | "email", "newsletter", "drip", "email sequence" | Light | None |
 | Website copy | "website copy", "landing page", "hero copy" | Medium | `${CLAUDE_PLUGIN_ROOT}/skills/write-strike/references/web-copy-best-practices.md` + `${CLAUDE_PLUGIN_ROOT}/skills/write-strike/references/SEO-GEO-drafting.md` |
-| Long-form | "whitepaper", "ebook", "guide", "manual" | Full | `${CLAUDE_PLUGIN_ROOT}/skills/write-strike/references/SEO-GEO-drafting.md` |
-| Survey report | "survey report", "research report", "findings" | Full | None |
+| Long-form | "whitepaper", "ebook", "guide", "manual", "survey report", "research report", "findings" | Full | `${CLAUDE_PLUGIN_ROOT}/skills/write-strike/references/SEO-GEO-drafting.md` |
 | Ad copy | "ad", "ad copy", "campaign copy" | Medium | `${CLAUDE_PLUGIN_ROOT}/skills/write-strike/references/schwartz-copywriting.md` + `${CLAUDE_PLUGIN_ROOT}/skills/write-strike/references/schwartz-5x5-matrix.md` |
-| Executive summary | "exec summary", "executive summary" | Medium | `${CLAUDE_PLUGIN_ROOT}/skills/bolt-content-formats/references/minto-scaffold.md` |
-| 1-pager | "1-pager", "one-pager" | Medium | `${CLAUDE_PLUGIN_ROOT}/skills/bolt-content-formats/references/minto-scaffold.md` |
+| Executive brief / 1-pager | "exec summary", "executive summary", "1-pager", "one-pager" | Medium | `${CLAUDE_PLUGIN_ROOT}/skills/bolt-content-formats/references/minto-scaffold.md` |
 | Byline | "byline", "thought leadership", "op-ed", "ghostwrite" | Full | `${CLAUDE_PLUGIN_ROOT}/skills/bolt-content-formats/references/minto-scaffold.md` |
 | Webinar | "webinar", "webinar BOM", "webinar content" | Template | `${CLAUDE_PLUGIN_ROOT}/skills/bolt-content-formats/references/webinar-bom-template.md` |
-| Event copy | "event copy", "conference", "meetup copy" | Light | None |
 | Sales enablement | "sales deck copy", "battle card", "objection handling" | Template | `${CLAUDE_PLUGIN_ROOT}/skills/bolt-content-formats/references/sales-enablement-template.md` |
 | Creator brief | "creator brief", "influencer brief" | Template | `${CLAUDE_PLUGIN_ROOT}/skills/bolt-content-formats/references/creator-brief-template.md` |
 
 **Reference: None** means there's no dedicated template for that type; follow the Bolt.new TOV plus the type-specific rules in Step 4.
+
+**Folded types (handled, but not standalone rows):** *Survey/research reports* run as Long-form with a findings-first structure (see the Long-form intake and drafting rules). *Event copy* (conference, meetup, booth) is composed from the Email, Social, and Website copy rules: punchy and CTA-driven (register, attend, visit the booth), with date/time formatting following regional rules. A request for either type still lands here; it just doesn't get its own workflow.
 
 **Workflow depth:**
 - **Ideation** = strategy intake → research → ideation → prioritize → handoff to content creation
@@ -80,7 +79,7 @@ If the content type isn't clear, ask.
 
 Before asking, try to infer the mode from the user's message:
 
-- **Quick-and-dirty signals:** "quick", "fast", "just need a", "bang out", "rough draft", "knock out", short requests with source material already attached, or any Light workflow content type (social, email, event copy).
+- **Quick-and-dirty signals:** "quick", "fast", "just need a", "bang out", "rough draft", "knock out", short requests with source material already attached, or any Light workflow content type (social, email).
 - **Content Bonanza signals:** "full workflow", "deep dive", "SEO research", "content bonanza", "the works", "let's do this right", content ideation requests, or any request that names a specific voice, Schwartz lens, or asks for alternative versions.
 
 If signals are clear, state the inferred mode and proceed ("This reads like a quick-and-dirty; I'll skip the full workflow and get you clean copy. Let me grab a few details."). The user can override.
@@ -160,17 +159,12 @@ Then ask page-type-specific follow-ups:
 - **General web copy:** What kind of page? (homepage, feature, pricing, solution, persona, industry, etc.) What's the page's primary job? Key differentiators or messaging to hit?
 - **Single-use landing page:** Traffic source (paid ad, email, social, event)? What does the referring content promise? Single conversion goal?
 
-**Long-form (whitepaper, ebook, guide):**
+**Long-form (whitepaper, ebook, guide, survey/research report):**
 - Topic and thesis
 - Target length (~2,000–5,000+ words)
 - Chapter/section structure (if the user has one)
 - Bibliography requirements
-
-**Survey report:**
-- Data source (spreadsheet, survey tool, raw data)
-- Key findings the user wants highlighted
-- Target audience for the report
-- Visualization needs (tables, charts to describe)
+- Survey/research report variant, also ask: data source (spreadsheet, survey tool, raw data), key findings the user wants highlighted, visualization needs (tables, charts to describe)
 
 **Ad copy:**
 - Platform and format (Google Ads, Meta, LinkedIn, display)
@@ -179,14 +173,10 @@ Then ask page-type-specific follow-ups:
 - Key message or offer
 - Landing page URL (for message match)
 
-**Executive summary:**
-- Source document or context to summarize
-- Key decisions or recommendations to surface
-- Page limit (default: 1-2 pages)
-
-**1-pager:**
-- Subject and goal
-- Must-include points
+**Executive brief / 1-pager:**
+- Format: executive summary (1-2 pages, summarizes a source document) or 1-pager (single page, stands alone)?
+- Source document or subject, and the goal
+- Key decisions, recommendations, or must-include points to surface
 - Distribution context (sales leave-behind, conference handout, email attachment)
 
 **Byline / thought leadership:**
@@ -201,11 +191,6 @@ Then ask page-type-specific follow-ups:
 - Target persona and funnel stage
 - Which content assets are needed (the BOM checklist: landing page, emails, social, slides, recap)
 - Voice: all webinar content uses Bolt.new TOV. Eric Simons' tone profile applies only to social posts attributed to him (see Webinar-specific in Step 4)
-
-**Event copy (non-webinar):**
-- Event type (conference, meetup, booth)
-- Copy needed (invite, landing page, email sequence, social promo)
-- Date, time, speakers
 
 **Sales enablement:**
 - Load `${CLAUDE_PLUGIN_ROOT}/skills/bolt-content-formats/references/sales-enablement-template.md` and work through the relevant asset's checklist
@@ -301,7 +286,7 @@ Present a structured outline to the user **and wait for approval** before drafti
 
 **Customer story outline follows** the template structure in `${CLAUDE_PLUGIN_ROOT}/skills/bolt-content-formats/references/customer-story-template.md`: headline, snapshot, setup, problem, turn, build, results, close, CTA.
 
-**Executive summaries, 1-pagers, bylines, and sales arguments** follow the answer-first document scaffold in `${CLAUDE_PLUGIN_ROOT}/skills/bolt-content-formats/references/minto-scaffold.md`: governing thesis up top, an SCQA lead, then three to five MECE supporting points.
+**Executive briefs / 1-pagers, bylines, and sales arguments** follow the answer-first document scaffold in `${CLAUDE_PLUGIN_ROOT}/skills/bolt-content-formats/references/minto-scaffold.md`: governing thesis up top, an SCQA lead, then three to five MECE supporting points.
 
 **Other types:** Adapt the outline to the format. A long-form outline is the chapter structure. An email outline is subject line + body flow + CTA.
 
@@ -326,7 +311,7 @@ Run the draft past Ogilvy's four load-bearing principles before it's done. This 
 
 ### Short-form structure
 
-For social, email, ads, and event copy (the Light-workflow types that skip the Schwartz diagnosis), reach for a proven skeleton from `${CLAUDE_PLUGIN_ROOT}/skills/write-strike/references/micro-formulas.md` (PAS, BAB, AIDA, PASTOR, FAB, 4Ps); FAB doubles as the feature-to-benefit antidote to feature-dumping. For long-form and persuasion-heavy work, Schwartz and the gut-check above lead; the formulas are the quick-draft tool, not the strategy layer.
+For social, email, ads, and other short-form quick hits (the Light-workflow types that skip the Schwartz diagnosis), reach for a proven skeleton from `${CLAUDE_PLUGIN_ROOT}/skills/write-strike/references/micro-formulas.md` (PAS, BAB, AIDA, PASTOR, FAB, 4Ps); FAB doubles as the feature-to-benefit antidote to feature-dumping. For long-form and persuasion-heavy work, Schwartz and the gut-check above lead; the formulas are the quick-draft tool, not the strategy layer.
 
 Type-specific rules below.
 
@@ -384,12 +369,7 @@ Additional rules for all website copy:
 - Structured with chapters or major sections.
 - Citations: superscript in-text numbers tied to a Works Cited appendix, Chicago Manual of Style. Long-form is exempt from the GEO inline-attribution rule. See bolt-TOV-and-guidelines (Bibliography and attribution).
 - Balance depth with readability. No padding.
-
-### Survey report-specific
-- Lead with key findings. Executive summary up front.
-- Tables and structured data where appropriate.
-- Source every claim. Methodology section if applicable.
-- Plain-language analysis: don't just present numbers, explain what they mean.
+- Survey/research report variant: lead with key findings, executive summary up front; tables and structured data where appropriate; source every claim, with a methodology section if applicable; plain-language analysis: don't just present numbers, explain what they mean.
 
 ### Ad copy-specific
 
@@ -414,14 +394,11 @@ Present all versions side by side so the user can compare and pick. Run stop-slo
 - Authoritative but not stiff. The person should sound like themselves.
 - Support claims with specifics.
 
-### Executive summary-specific
-- 1-2 pages max. Key findings and recommendations up front.
+### Executive brief / 1-pager-specific
+- Written for decision-makers who won't read the full document. Key findings and recommendations up front.
 - Scannable: headers, bullets, bold for emphasis (sparingly).
-- Written for decision-makers who won't read the full document.
-
-### 1-pager-specific
-- Single-page constraint. Scannable layout.
-- Lead with the problem, present the solution, close with the CTA.
+- Executive summary format: 1-2 pages max, anchored to its source document.
+- 1-pager format: single-page constraint; lead with the problem, present the solution, close with the CTA.
 
 ### Sales enablement-specific
 - Follow the asset structure in `${CLAUDE_PLUGIN_ROOT}/skills/bolt-content-formats/references/sales-enablement-template.md` (battle card, objection handler, or competitive one-sheet).
@@ -435,10 +412,6 @@ Present all versions side by side so the user can compare and pick. Run stop-slo
 - Follow the BOM in `${CLAUDE_PLUGIN_ROOT}/skills/bolt-content-formats/references/webinar-bom-template.md`. Work through each section the user needs; don't dump the whole template at once.
 - Draft all content assets in the order they're needed: landing page → email invite → social announcement → reminders → day-of → follow-up → recap.
 - **Notion export:** After drafting, offer to export to the Editorial Calendar. See the "Export to Notion" section in `${CLAUDE_PLUGIN_ROOT}/skills/bolt-content-formats/references/webinar-bom-template.md` for instructions.
-
-### Event copy-specific (non-webinar)
-- Punchy and CTA-driven. Get them to register, attend, or visit the booth.
-- Date/time formatting follows regional rules.
 
 ### Creator brief-specific
 - Follow the structure in `${CLAUDE_PLUGIN_ROOT}/skills/bolt-content-formats/references/creator-brief-template.md`.

@@ -11,7 +11,7 @@ Structural scaffolding for the Bolt.new content types that have a defined shape.
 | Content type | Scaffold | What it defines |
 |---|---|---|
 | Customer story / case study | [references/customer-story-template.md](references/customer-story-template.md) | Pre-draft checklist, the 9-section narrative structure, interview question bank, tone reminders |
-| Webinar | [references/webinar-bom-template.md](references/webinar-bom-template.md) | Full bill of materials, event details, asset checklist, ContentedCal export, timeline |
+| Webinar | [references/webinar-bom-template.md](references/webinar-bom-template.md) | Full bill of materials, event details, asset checklist, Notion BOM export (Webinar Hub) + ContentedCal logging, timeline |
 | Sales enablement | [references/sales-enablement-template.md](references/sales-enablement-template.md) | Battle card, objection handler, and competitive one-sheet formats with worked examples |
 | Creator brief | [references/creator-brief-template.md](references/creator-brief-template.md) | The 9-section brief: objective, audience, key messages, deliverables, guardrails, timeline |
 | Exec summary / 1-pager / byline / sales argument | [references/minto-scaffold.md](references/minto-scaffold.md) | Answer-first document skeleton: governing thesis, SCQA lead, MECE supporting arguments, integrity check |

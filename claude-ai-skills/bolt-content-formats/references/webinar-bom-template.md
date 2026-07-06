@@ -6,9 +6,26 @@ Based on the editorial-calendar template used for HustleFund, Storybook/Bolt, an
 
 ---
 
-## Log in ContentedCal
+## Export the finished BOM (Notion page + ContentedCal entry)
 
-After drafting all webinar content, offer to log the webinar in **ContentedCal** (contentedcal.com), the editorial calendar of record. ContentedCal is the in-house Supabase app: write through the already-connected Supabase MCP (`mcp__supabase__execute_sql`). There is no separate ContentedCal API key or connector.
+Webinar BOMs do **not** export as `.docx`. The finished package (all drafted assets plus the run of show) ships as a **new Notion page**, so everything lives in one doc, and then gets logged in **ContentedCal**, the editorial calendar of record. Two steps, in order:
+
+### 1. Create the Notion BOM page
+
+Create a new page as a **child of the Webinar Hub** (parent page ID `395d971055d6809dad1bff2c70e24b50`, https://www.notion.so/stackblitz/Webinar-Hub-395d971055d6809dad1bff2c70e24b50) using the Notion MCP (`notion-create-pages`). One new doc per webinar, filed under the Hub.
+
+- **Title:** the webinar title (append the date if the title alone is ambiguous)
+- **Content:** the filled-in BOM below, rendered as Notion-flavored Markdown:
+  - Toggle headings (`{toggle="true"}`) for collapsible sections (Content Review Checklist, Partner Details, SEO & GEO)
+  - Checkboxes (`- [ ]`) for all checklist items
+  - Tables for the content BOM tracker and the run-of-show timeline
+  - Date fields rendered as `@YYYY-MM-DD` inline mentions where dates are filled in
+- Fetch the Notion enhanced-markdown-spec resource (`notion://docs/enhanced-markdown-spec`) before building the page content to ensure correct syntax.
+- Confirm with the user before creating; return the new page URL when done.
+
+### 2. Log it in ContentedCal
+
+ContentedCal (contentedcal.com) is the in-house Supabase app: write through the already-connected Supabase MCP (`mcp__supabase__execute_sql`). There is no separate ContentedCal API key or connector.
 
 Before writing anything, ask the user which **workspace and project** the webinar belongs to (list their projects if needed), then confirm exactly what you're about to create. Insert into `content_items`:
 
@@ -19,7 +36,7 @@ Before writing anything, ask the user which **workspace and project** the webina
 - `due_date`: webinar date; `publish_date`: same, unless the user says otherwise
 - `project_id`: the project the user picked
 - `assignee_ids`: the owner(s) the user names
-- `description`: one-line summary plus a pointer to where the drafted BOM assets live
+- `description`: one-line summary **plus the Notion BOM page URL from step 1**, so the calendar entry and the doc stay connected
 
 Optionally offer one item per major BOM asset (landing page, email invite, social, recap) instead of a single item, mirroring how launch projects are structured. The schema evolves: check current columns with a `SELECT ... LIMIT 1` before inserting, and confirm with the user before any write.
 

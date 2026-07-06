@@ -398,7 +398,7 @@ Present all versions side by side so the user can compare and pick. Run stop-slo
 - **Exception, social posts attributed to a named person:** when a post goes out under a team member's own account (Eric announcing the webinar, Garrett recapping it), read that person's tone profile from bolter-tones and draft in their voice. The post should sound like that person talking about the webinar, not marketing copy about the webinar. This applies only to person-attributed social posts; every other webinar asset stays Bolt.new TOV. If the person has no profile in bolter-tones, flag it and use Bolt.new TOV rather than inventing a voice.
 - Follow the BOM in `${CLAUDE_PLUGIN_ROOT}/skills/bolt-content-formats/references/webinar-bom-template.md`. Work through each section the user needs; don't dump the whole template at once.
 - Draft all content assets in the order they're needed: landing page → email invite → social announcement → reminders → day-of → follow-up → recap.
-- **ContentedCal export:** After drafting, offer to log the webinar and its assets in ContentedCal, the editorial calendar of record. See the "Log in ContentedCal" section in `${CLAUDE_PLUGIN_ROOT}/skills/bolt-content-formats/references/webinar-bom-template.md` for instructions.
+- **Export (Notion + ContentedCal):** webinar BOMs do not export as `.docx`. After drafting, offer to ship the full package (assets + run of show) as a **new Notion page under the Webinar Hub**, then log it in ContentedCal (the editorial calendar of record) with the Notion page linked. See "Export the finished BOM" in `${CLAUDE_PLUGIN_ROOT}/skills/bolt-content-formats/references/webinar-bom-template.md` for both steps.
 
 ### Creator brief-specific
 - Follow the structure in `${CLAUDE_PLUGIN_ROOT}/skills/bolt-content-formats/references/creator-brief-template.md`.
@@ -430,7 +430,7 @@ Options:
 
 Run stop-slop audit on any alternative version. Present alongside V1 for comparison.
 
-**For any content type**, if the user asks to export: generate a Word doc via the `anthropic-skills:docx` skill and save it to `~/Documents/Drafts/` by default. For Google Drive delivery, copy the finished `.docx` into the synced Drive folder (`My Drive/Claude-Drafts`; requires Drive for Desktop running). Keep it a `.docx`. Do NOT create a native Google Doc through the Drive MCP; that path loses formatting and was retired.
+**For any content type**, if the user asks to export: generate a Word doc via the `anthropic-skills:docx` skill and save it to `~/Documents/Drafts/` by default. For Google Drive delivery, copy the finished `.docx` into the synced Drive folder (`My Drive/Claude-Drafts`; requires Drive for Desktop running). Keep it a `.docx`. Do NOT create a native Google Doc through the Drive MCP; that path loses formatting and was retired. (One exception: **webinar BOMs** export as a new Notion page under the Webinar Hub, not a `.docx` — see Webinar-specific in Step 4.)
 
 
 ## Google Doc template population

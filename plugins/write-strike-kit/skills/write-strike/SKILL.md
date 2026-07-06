@@ -188,7 +188,7 @@ Then ask page-type-specific follow-ups:
 - Partner details (if co-hosted)
 - Target persona and funnel stage
 - Which content assets are needed (the BOM checklist: landing page, emails, social, slides, recap)
-- Voice: all webinar content uses Bolt.new TOV. Eric Simons' tone profile applies only to social posts attributed to him (see Webinar-specific in Step 4)
+- Voice: all webinar content uses Bolt.new TOV. Personal tone profiles apply only to social posts attributed to a named person (see Webinar-specific in Step 4)
 
 **Sales enablement:**
 - Load `${CLAUDE_PLUGIN_ROOT}/skills/bolt-content-formats/references/sales-enablement-template.md` and work through the relevant asset's checklist
@@ -315,21 +315,13 @@ Type-specific rules below.
 
 ### Voice selection (social only)
 
-Before drafting social content, ask using AskUserQuestion:
+Before drafting social content, build the voice menu and ask which voice to use (AskUserQuestion). **Don't hardcode the roster here** — bolter-tones is the single source of truth for who's on it. The menu is a recipe:
 
-> "Do you want this drafted from the Bolt.new TOV or a specific person's voice?"
+1. **Bolt.new TOV** (default): standard brand voice from bolt-TOV-and-guidelines.
+2. **Every voice in bolter-tones**: read the Available Voices table in `${CLAUDE_PLUGIN_ROOT}/skills/bolter-tones/SKILL.md` and offer each person listed, using the table's **Menu blurb** as the option description.
+3. **Ogilvy**: ad-man precision. One big promise, a headline that works as a standalone claim, facts over adjectives, product as the hero. Pulls from the `ogilvy-copywriting` skill, not a personal tone profile.
 
-Options:
-- **Bolt.new TOV**: Standard brand voice from bolt-TOV-and-guidelines
-- **Eric Simons**: Builder-CEO energy, casually confident, technically fluent
-- **Alexander Berger**: Operator-commentator energy, internet-native, humor as the hook
-- **Dominic Elm**: Engineer-educator energy, curiosity-driven, technically deep
-- **Garrett Serviss**: Marketing-operator energy, structured, benefit-led, polished but warm
-- **Donald Savard**: Launch-mode PMM energy, punchy, vibes-driven, always shipping
-- **Gary Ballabio**: Enterprise partnerships energy, polished, hashtag-forward, amplifier-first
-- **Ogilvy**: Ad-man precision. One big promise, a headline that works as a standalone claim, facts over adjectives, product as the hero. Pulls from the `ogilvy-copywriting` skill, not a personal tone profile.
-
-If a person's voice is selected, read their tone profile from the bolter-tones skill (`${CLAUDE_PLUGIN_ROOT}/skills/bolter-tones/references/`) and apply it on top of the Bolt.new editorial guidelines. The tone profile shapes how the piece sounds; the editorial guidelines still govern grammar and formatting, and the bolt-stop-slop filter still applies. If **Ogilvy** is selected, there's no tone profile to read: draft from the `ogilvy-copywriting` skill's principles (one big promise, facts over adjectives, product as hero), with the same editorial guidelines and bolt-stop-slop filter on top.
+If a person's voice is selected, read their tone profile from the file listed in that table and apply it on top of the Bolt.new editorial guidelines. The tone profile shapes how the piece sounds; the editorial guidelines still govern grammar and formatting, and the bolt-stop-slop filter still applies. If **Ogilvy** is selected, there's no tone profile to read: draft from the `ogilvy-copywriting` skill's principles (one big promise, facts over adjectives, product as hero), with the same editorial guidelines and bolt-stop-slop filter on top.
 
 ### Blog-specific
 Blogs are delegated to the `bolt-blog` skill at routing (Step 1). No blog drafting rules live here: bolt-blog owns the shape, citations (inline parenthetical, hyperlinked), SEO requirements, and audit. For a blog in a specific person's voice, tell bolt-blog; it reads the profile from bolter-tones.
@@ -403,7 +395,7 @@ Present all versions side by side so the user can compare and pick. Run stop-slo
 
 ### Webinar-specific
 - **Default voice for all webinar content is Bolt.new TOV.** Landing pages, emails, reminders, slide copy, recap posts, and brand social posts all use the standard brand voice from bolt-TOV-and-guidelines. Do not apply a personal tone profile to these assets.
-- **Exception, Eric Simons social posts only:** read his tone profile from bolter-tones (`${CLAUDE_PLUGIN_ROOT}/skills/bolter-tones/references/eric-simons-tone.md`). His posts should sound like him talking about the webinar, not marketing copy about the webinar. This applies only to social posts attributed to Eric, not to any other webinar content.
+- **Exception, social posts attributed to a named person:** when a post goes out under a team member's own account (Eric announcing the webinar, Garrett recapping it), read that person's tone profile from bolter-tones and draft in their voice. The post should sound like that person talking about the webinar, not marketing copy about the webinar. This applies only to person-attributed social posts; every other webinar asset stays Bolt.new TOV. If the person has no profile in bolter-tones, flag it and use Bolt.new TOV rather than inventing a voice.
 - Follow the BOM in `${CLAUDE_PLUGIN_ROOT}/skills/bolt-content-formats/references/webinar-bom-template.md`. Work through each section the user needs; don't dump the whole template at once.
 - Draft all content assets in the order they're needed: landing page → email invite → social announcement → reminders → day-of → follow-up → recap.
 - **ContentedCal export:** After drafting, offer to log the webinar and its assets in ContentedCal, the editorial calendar of record. See the "Log in ContentedCal" section in `${CLAUDE_PLUGIN_ROOT}/skills/bolt-content-formats/references/webinar-bom-template.md` for instructions.

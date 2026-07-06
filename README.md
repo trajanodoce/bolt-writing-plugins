@@ -81,3 +81,5 @@ The plugin copies are **generated** from the live skills in `~/.claude/skills/` 
 3. Commit and push (or publish from GitHub Desktop).
 
 Bumping the version is what triggers teammates' updates. Pushing new commits without a version bump will not deliver changes.
+
+This marketplace is the **only** distribution channel. The claude.ai Shared Skills library was retired (Jul 2026): uploads there went stale between deploys and duplicate copies hijacked skill routing in desktop sessions. Don't re-upload skills to it; point people here.

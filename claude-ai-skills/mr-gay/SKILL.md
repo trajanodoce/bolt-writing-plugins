@@ -121,7 +121,7 @@ Citations are part of claims-and-proof, and the right *format* depends on the co
 
 - **Long-form** (ebook, whitepaper, guide, report): superscript in-text numbers tied to a **Works Cited appendix**, Chicago Manual of Style. A missing appendix, un-numbered claims, or inconsistent Chicago formatting are flags.
 - **Blog:** inline **parenthetical naming the source**, hyperlinked to the original. A blog carrying footnotes or a bibliography is the wrong format (Yellow); an unlinked source name is Blue.
-- **Website:** inline and hyperlinked, light, with first-party data labeled and linked. Superscripts or a works-cited block on a web page is the wrong format.
+- **Website:** inline and hyperlinked, light, with first-party data labeled and linked; this is the default for all web copy. Superscripts or a works-cited block on a web page is the wrong format. (A deliberate one-off, like a gated-asset download page, isn't a mismatch; flag it only if it looks accidental.)
 
 Flag mismatches at the appropriate tier; a missing source on a load-bearing claim is Red. Don't reformat by hand unless asked: name the type, name the mismatch, point to the rule.
 

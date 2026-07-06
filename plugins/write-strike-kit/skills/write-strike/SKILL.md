@@ -130,9 +130,7 @@ Once the user selects an audience, read their persona from bolt-buyer-personas (
 
 Ask questions specific to the content type. Batch into the rounds above where possible.
 
-**Blog:**
-- Topic / key message (free text, or offer: feature launch, product update, thought leadership, tutorial/how-to)
-- Target length (~800 short/punchy, ~1,200 standard, ~1,500+ deep-dive)
+**Blog:** delegated to `bolt-blog` at routing; it runs its own intake. Don't run blog intake here.
 
 **Customer story:**
 - Load `${CLAUDE_PLUGIN_ROOT}/skills/bolt-content-formats/references/customer-story-template.md` and work through its Pre-Draft Checklist
@@ -163,7 +161,7 @@ Then ask page-type-specific follow-ups:
 - Topic and thesis
 - Target length (~2,000–5,000+ words)
 - Chapter/section structure (if the user has one)
-- Bibliography requirements
+- Source material and citation constraints (the format itself is fixed: Chicago superscript + Works Cited, per bolt-TOV-and-guidelines)
 - Survey/research report variant, also ask: data source (spreadsheet, survey tool, raw data), key findings the user wants highlighted, visualization needs (tables, charts to describe)
 
 **Ad copy:**
@@ -315,9 +313,9 @@ For social, email, ads, and other short-form quick hits (the Light-workflow type
 
 Type-specific rules below.
 
-### Voice selection (blog and social only)
+### Voice selection (social only)
 
-Before drafting blog posts or social content, ask using AskUserQuestion:
+Before drafting social content, ask using AskUserQuestion:
 
 > "Do you want this drafted from the Bolt.new TOV or a specific person's voice?"
 
@@ -334,10 +332,7 @@ Options:
 If a person's voice is selected, read their tone profile from the bolter-tones skill (`${CLAUDE_PLUGIN_ROOT}/skills/bolter-tones/references/`) and apply it on top of the Bolt.new editorial guidelines. The tone profile shapes how the piece sounds; the editorial guidelines still govern grammar and formatting, and the bolt-stop-slop filter still applies. If **Ogilvy** is selected, there's no tone profile to read: draft from the `ogilvy-copywriting` skill's principles (one big promise, facts over adjectives, product as hero), with the same editorial guidelines and bolt-stop-slop filter on top.
 
 ### Blog-specific
-- Open with a hook, not a summary.
-- H2/H3 subheads. 800-1,500 words default.
-- End with a clear CTA.
-- Citations: inline parenthetical naming the source at the end of the sentence, hyperlinked to the original. Example: "(Forrester)". No footnotes or bibliography. See bolt-TOV-and-guidelines (Bibliography and attribution).
+Blogs are delegated to the `bolt-blog` skill at routing (Step 1). No blog drafting rules live here: bolt-blog owns the shape, citations (inline parenthetical, hyperlinked), SEO requirements, and audit. For a blog in a specific person's voice, tell bolt-blog; it reads the profile from bolter-tones.
 
 ### Customer story-specific
 - Follow the nine-section structure in `${CLAUDE_PLUGIN_ROOT}/skills/bolt-content-formats/references/customer-story-template.md`.
@@ -363,7 +358,7 @@ Read `${CLAUDE_PLUGIN_ROOT}/skills/write-strike/references/web-copy-best-practic
 Additional rules for all website copy:
 - Headline casing on heroes and headers.
 - Show the product. Screenshots, demos, real output. No stock illustrations.
-- Citations: inline and hyperlinked, never superscripts or a works-cited block. Label and link first-party data. Cite sparingly on conversion pages (hero, pricing, landing), more freely on content-style pages (industry, solution, persona, research hubs); keep each claim and its source in the same sentence. See bolt-TOV-and-guidelines (Bibliography and attribution).
+- Citations: inline and hyperlinked, never superscripts or a works-cited block. This is the default for ALL web copy; a rare page-level exception (e.g., a gated-asset download page) is a deliberate one-off, decided per piece. Label and link first-party data. Cite sparingly on conversion pages (hero, pricing, landing), more freely on content-style pages (industry, solution, persona, research hubs); keep each claim and its source in the same sentence. See bolt-TOV-and-guidelines (Bibliography and attribution).
 
 ### Long-form-specific
 - Structured with chapters or major sections.
@@ -411,7 +406,7 @@ Present all versions side by side so the user can compare and pick. Run stop-slo
 - **Exception, Eric Simons social posts only:** read his tone profile from bolter-tones (`${CLAUDE_PLUGIN_ROOT}/skills/bolter-tones/references/eric-simons-tone.md`). His posts should sound like him talking about the webinar, not marketing copy about the webinar. This applies only to social posts attributed to Eric, not to any other webinar content.
 - Follow the BOM in `${CLAUDE_PLUGIN_ROOT}/skills/bolt-content-formats/references/webinar-bom-template.md`. Work through each section the user needs; don't dump the whole template at once.
 - Draft all content assets in the order they're needed: landing page → email invite → social announcement → reminders → day-of → follow-up → recap.
-- **Notion export:** After drafting, offer to export to the Editorial Calendar. See the "Export to Notion" section in `${CLAUDE_PLUGIN_ROOT}/skills/bolt-content-formats/references/webinar-bom-template.md` for instructions.
+- **ContentedCal export:** After drafting, offer to log the webinar and its assets in ContentedCal, the editorial calendar of record. See the "Log in ContentedCal" section in `${CLAUDE_PLUGIN_ROOT}/skills/bolt-content-formats/references/webinar-bom-template.md` for instructions.
 
 ### Creator brief-specific
 - Follow the structure in `${CLAUDE_PLUGIN_ROOT}/skills/bolt-content-formats/references/creator-brief-template.md`.
@@ -443,9 +438,7 @@ Options:
 
 Run stop-slop audit on any alternative version. Present alongside V1 for comparison.
 
-**For any content type**, if the user asks to export, ask which format:
-- **Google Doc**: Use the Google Drive MCP (`create_file`) to create a new Google Doc with the content. Return the link.
-- **Word (.docx)**: Use the `anthropic-skills:docx` skill to generate a `.docx` file. Save to `~/Documents/Drafts/` by default.
+**For any content type**, if the user asks to export: generate a Word doc via the `anthropic-skills:docx` skill and save it to `~/Documents/Drafts/` by default. For Google Drive delivery, copy the finished `.docx` into the synced Drive folder (`My Drive/Claude-Drafts`; requires Drive for Desktop running). Keep it a `.docx`. Do NOT create a native Google Doc through the Drive MCP; that path loses formatting and was retired.
 
 
 ## Google Doc template population

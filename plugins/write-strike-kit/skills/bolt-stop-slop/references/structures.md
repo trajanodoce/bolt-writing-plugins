@@ -6,14 +6,16 @@ These create false drama. State the positive claim directly.
 
 | Pattern | Problem |
 |---------|---------|
-| "Not because X. Because Y." | Telegraphed reversal |
+| "Not because X. Because Y." / "Not because X, but because Y." | Telegraphed reversal |
 | "[X] isn't the problem. [Y] is." | Formulaic reframe |
 | "The answer isn't X. It's Y." | Predictable pivot |
 | "It feels like X. It's actually Y." | Setup/reveal cliche |
 | "The question isn't X. It's Y." | Rhetorical misdirection |
-| "Not X. But Y." / "not X, it's Y" | Mechanical contrast |
+| "Not X. But Y." / "not X, it's Y" / "isn't X, it's Y" | Mechanical contrast |
+| "It's not this. It's that." | Same formula, different words |
 | "stops being X and starts being Y" | False transformation arc |
 | "doesn't mean X, but actually Y" | Negation-then-assertion crutch |
+| "is about X but not Y" | False distinction |
 | "not just X but also Y" | Additive hedge |
 | "Forget X. This is Y." | Same formula, imperative version |
 | "Less X, more Y." | Comparative version |
@@ -58,6 +60,13 @@ Announcing insight rather than delivering it.
 | "What isn't measured doesn't improve." | Aphorism as argument |
 
 **Fix:** Make the point. Let readers draw conclusions.
+
+## Formulaic constructions
+
+| Pattern | Problem |
+|---------|---------|
+| "By the time X, I was Y." | Narrative template |
+| "X that isn't Y" | Indirect. Say "X is broken." |
 
 ## False agency
 
@@ -128,3 +137,10 @@ Every sentence needs a subject doing something.
 | Em dashes | Remove. Use commas, periods, colons, semicolons, or parentheses. |
 | Stacked short punchy sentences | Don't stack more than two |
 | "Not always. Not perfectly." | Hedging disguised as reassurance |
+
+## Word patterns
+
+| Pattern | Problem |
+|---------|---------|
+| Lazy extremes (every, always, never, everyone, everybody, nobody) | False authority. Use specifics instead of sweeping claims. |
+| All adverbs (-ly words, "really," "just," "literally," "genuinely," "honestly," "simply," "actually") | Empty emphasis. See [references/banned.md](banned.md) for the full list. |

@@ -69,7 +69,7 @@ All headlines, headers, and subheads use sentence casing. Exception: website her
 
 - **Long-form** (ebook, whitepaper, guide, manual, report): superscript in-text numbers tied to a **Works Cited appendix** at the end, formatted in **Chicago Manual of Style**. These are downloadable assets, so the academic treatment fits, and they are exempt from the inline-attribution rule below.
 - **Blog:** inline **parenthetical naming the source** at the end of the sentence, hyperlinked to the original. Example: "...cut onboarding time by 40% (Forrester)." No footnotes, no bibliography.
-- **Website:** inline and **hyperlinked**, never superscripts or a works-cited block. Label and link first-party data ("Based on Bolt's 2026 data" links to a methodology or report page). Cite sparingly on conversion pages (hero, pricing, landing) and more freely on content-style pages (industry, solution, persona, research hubs). Keep each claim and its source in the same sentence.
+- **Website (the default for all web copy):** inline and **hyperlinked**, never superscripts or a works-cited block. Label and link first-party data ("Based on Bolt's 2026 data" links to a methodology or report page). Cite sparingly on conversion pages (hero, pricing, landing) and more freely on content-style pages (industry, solution, persona, research hubs). Keep each claim and its source in the same sentence. Rare page-level exceptions (e.g., a gated-asset download page) are deliberate one-offs, decided per piece.
 
 ### US vs. UK spelling
 Use US spelling as the default for all content, unless:
@@ -182,3 +182,5 @@ Read through your copy to make sure you've got the correct version of all homogr
 Every draft passes through the stop-slop filter before it ships. That filter lives in one place now: the **`bolt-stop-slop`** skill (`${CLAUDE_PLUGIN_ROOT}/skills/bolt-stop-slop/SKILL.md`). It is the single source of truth for killing dead language, fixing AI structural patterns, the voice rules (active voice, no adverbs, no em dashes, no copula inflation, contractions, specificity over declaration), the second-generation tells, the build-texture rules, the rhythm checks, and the 35/50 scoring rubric. Run it on every piece.
 
 Worked examples of specific-beats-slop live in `${CLAUDE_PLUGIN_ROOT}/skills/bolt-stop-slop/references/slop-vs-gold.md`.
+
+**Sharing this guide outside the stack** (external creators, agencies): bundle the `bolt-stop-slop` skill and its references alongside it, or the slop filter and worked examples this section points to won't travel.

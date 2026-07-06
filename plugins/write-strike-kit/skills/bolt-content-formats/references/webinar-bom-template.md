@@ -2,35 +2,26 @@
 
 A production checklist and content template for Bolt.new webinars. Covers everything from planning through post-event content. Work through each section in order; skip what doesn't apply.
 
-Based on the Notion Editorial Calendar template used for HustleFund, Storybook/Bolt, and other Bolt.new webinars.
+Based on the editorial-calendar template used for HustleFund, Storybook/Bolt, and other Bolt.new webinars. The calendar of record is now ContentedCal.
 
 ---
 
-## Export to Notion
+## Log in ContentedCal
 
-After drafting all webinar content, offer to create the webinar as a page in the Editorial Calendar. When the user is ready to export, create a new page directly in the Editorial Calendar database using the `notion-create-pages` tool.
+After drafting all webinar content, offer to log the webinar in **ContentedCal** (contentedcal.com), the editorial calendar of record. ContentedCal is the in-house Supabase app: write through the already-connected Supabase MCP (`mcp__supabase__execute_sql`). There is no separate ContentedCal API key or connector.
 
-**Parent data source:** `collection://9ef5052b-a5cb-4c36-b8cc-049dcdcd73b7` (Editorial Calendar)
+Before writing anything, ask the user which **workspace and project** the webinar belongs to (list their projects if needed), then confirm exactly what you're about to create. Insert into `content_items`:
 
-**Properties to set from intake:**
-- `Content Title`: webinar title
-- `Content Type`: "Webinar/Livestream"
-- `Request Type`: "Event"
-- `Due Date`: webinar date
-- `Requestor`: tag the user
-- `Status`: "📅 Scheduled"
-- `Funnel Stage`: from intake (TOFU / MOFU / BOFU)
-- `Persona`: from intake
-- `Campaign Type`: from intake (Thought Leadership, Product Education, etc.)
-- `Priority`: ask if not specified
+- `title`: webinar title
+- `content_type_id`: the workspace's "Webinar" content type
+- `status`: the workspace's Backlog or Scheduled board column (user's call)
+- `channel`: "Other" unless the user prefers a specific channel
+- `due_date`: webinar date; `publish_date`: same, unless the user says otherwise
+- `project_id`: the project the user picked
+- `assignee_ids`: the owner(s) the user names
+- `description`: one-line summary plus a pointer to where the drafted BOM assets live
 
-**Page content:** Render the filled-in BOM below as Notion-flavored Markdown. Use:
-- Toggle headings (`{toggle="true"}`) for collapsible sections (Content Review Checklist, Partner Details, SEO & GEO, matching the existing Editorial Calendar template structure)
-- Checkboxes (`- [ ]`) for all checklist items
-- Tables for the content BOM tracker and timeline
-- Date fields rendered as `@2026-06-15` inline mentions where dates have been filled in
-
-Fetch the Notion enhanced-markdown-spec resource (`notion://docs/enhanced-markdown-spec`) before building the page content to ensure correct syntax.
+Optionally offer one item per major BOM asset (landing page, email invite, social, recap) instead of a single item, mirroring how launch projects are structured. The schema evolves: check current columns with a `SELECT ... LIMIT 1` before inserting, and confirm with the user before any write.
 
 ---
 

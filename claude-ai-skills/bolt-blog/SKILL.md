@@ -52,7 +52,9 @@ Gather context before writing. Run these in parallel when possible. Don't go dow
 
 **Internal (Notion, Linear, Slack).** Product specs, positioning notes, shipped milestones, customer feedback, internal framing. If the user provided source material during intake, prioritize it; supplement, don't duplicate.
 
-**Sourcing bar (every post).** At least two credible sources, internal or external, a mix is ideal. Always cite the origin, not the middleman: if a stat appears in a TechCrunch piece citing a Forrester report, trace it to Forrester and cite that. If you can't verify the primary source, don't use the stat. Long-form gets a Chicago-style bibliography.
+**Sourcing bar (every post).** At least two credible sources, internal or external, a mix is ideal. Always cite the origin, not the middleman: if a stat appears in a TechCrunch piece citing a Forrester report, trace it to Forrester and cite that. If you can't verify the primary source, don't use the stat.
+
+**Citation format (every post).** Inline parenthetical naming the publication at the end of the sentence, hyperlinked to the original source: "...cut onboarding time by 40% (Forrester)." No footnotes, no bibliography, no works-cited block on a blog. Chicago-style Works Cited belongs to long-form assets (guides, eBooks, reports), which route through write-strike, not here. Source of truth: bolt-TOV-and-guidelines, "Bibliography and attribution."
 
 **Content-strategy check.** Position the post before drafting:
 - Searchable, shareable, or both? Most Bolt.new posts are searchable first, shareable second.
@@ -79,6 +81,7 @@ For deeper planning (a series, new pillars, a backlog) use `/content-strategy`. 
 ### SEO requirements baked into every post
 - Target keyword in: title, first 100 words, at least one H2, meta description
 - Related/LSI terms distributed naturally throughout
+- External citations inline and hyperlinked: parenthetical publication name at sentence end, linked to the original. No footnotes or bibliography.
 - Internal link opportunities noted with `[INTERNAL LINK: suggested anchor + topic]`
 - Suggest meta title (≤60 chars) and meta description (≤160 chars) at the end
 - Suggest a slug
@@ -198,6 +201,7 @@ Check:
 - Heading structure logical and keyword-aligned?
 - Internal links present with descriptive anchor text?
 - Slug clean and keyword-inclusive?
+- Citations inline + hyperlinked (parenthetical publication name)? Flag any footnotes or bibliography carried in from elsewhere.
 - Any thin sections that need expanding?
 
 Report findings as: ✅ Pass / ⚠️ Fix needed / ❌ Missing, with specific fixes inline.

@@ -13,6 +13,8 @@ This is the single source of truth for Bolt.new's written voice. Every piece of 
 
 Read this entire file before producing any written output for Bolt.new.
 
+This guide governs HOW to write. WHO you're writing for (register, reading level, jargon tolerance) lives in `bolt-buyer-personas`; read the relevant persona alongside this guide before drafting audience-targeted content.
+
 ---
 
 ## Tone of Voice
@@ -27,10 +29,12 @@ What you say is as important as how you say it.
 Bolt.new is conversational and as natural as the language people use in our product's prompt box. You are always talking to a person. Read the copy out loud. Don't use jargon. No padding. No fluff. Clear and direct.
 
 **Bold.**
-We are defining a new market. We want to own prompt coding for the enterprise. Our tech holds the sharpest cutting edge. Speak with the authority the quality of our platform demands.
+We are defining a new market. We want to own prompt coding for the enterprise. Our tech holds the sharpest cutting edge. Speak with the authority the quality of our platform demands. Bold and Reliable don't conflict: authority comes from specificity, not superlatives. The three-rules test (below) is the referee.
 
 **Current.**
 We want to sound like what we are, a modern, AI-native company. Stay away from wording that feels too stodgy or old-school business slang-y.
+
+Stodgy: "We provide best-in-class solutions that help enterprises leverage synergies." Current: "Describe the app you need. Bolt.new builds it." The business-jargon table in `bolt-stop-slop`'s banned.md is the field guide to what old-school sounds like.
 
 **Engaging and intentional.**
 Our audience should read our content and be thirsty for more. What we take the time to draft, write, and publish should also be worth the reader's time. Our content should have purpose, meet a need, or drive a lead.
@@ -44,6 +48,22 @@ Get to the point. People are busy.
 ### Brand name
 
 Always refer to the product as **Bolt.new**. Never just "Bolt."
+
+### Product and terminology glossary
+
+The names we write, the way we write them, every time:
+
+| Term | Usage |
+|---|---|
+| **Bolt.new** | The product. Capital B, always the full name. Never "Bolt" alone. |
+| **StackBlitz** | The company. One word, capital S and B. |
+| **WebContainers** | The technology. One word, camel case, plural. |
+| **Skills, Slides** (feature names) | Capitalized as proper nouns. First mention ties to the product ("Bolt.new Skills"); "Skills" alone after that. |
+| **prompt coding, vibe coding** | Category terms, lowercase. |
+| **AI app builder** | Category term, lowercase (capitalize only in headline casing contexts). |
+| **Claude, Anthropic** | Partner names as they brand them. |
+
+When a new feature ships, add its row here before the launch copy is drafted, not after.
 
 
 ---
@@ -71,16 +91,23 @@ All headlines, headers, and subheads use sentence casing. Exception: website her
 - **Blog:** inline **parenthetical naming the source** at the end of the sentence, hyperlinked to the original. Example: "...cut onboarding time by 40% (Forrester)." No footnotes, no bibliography.
 - **Website (the default for all web copy):** inline and **hyperlinked**, never superscripts or a works-cited block. Label and link first-party data ("Based on Bolt's 2026 data" links to a methodology or report page). Cite sparingly on conversion pages (hero, pricing, landing) and more freely on content-style pages (industry, solution, persona, research hubs). Keep each claim and its source in the same sentence. Rare page-level exceptions (e.g., a gated-asset download page) are deliberate one-offs, decided per piece.
 
-### US vs. UK spelling
-Use US spelling as the default for all content, unless:
-- English translations of regional events outside of the US
-- Marketing copy drafted in English targeted to regions outside the US
+### Naming competitors
+We write comparison content; write it like we're confident, because we are:
+- Name competitors plainly (Lovable, Replit, Cursor). No coy "other AI builders."
+- Every comparative claim carries a receipt: a benchmark, a price, a dated screenshot, a cited limitation. The three-rules test applies double here.
+- Critique the product, never the company or its people. No punching down, no dunking.
+- Date competitive claims in the sentence ("as of June 2026"): competitor products change monthly, and stale swipes damage us, not them.
 
-In those cases, use UK spelling.
+### US vs. UK spelling
+Use US spelling as the default for all content. Exception: copy written for UK/EMEA audiences (including English coverage of UK/EMEA regional events) uses UK spelling. APAC, LatAm, and everywhere else default to US spelling.
 
 ### Numbers
 - Spell out one through ten.
 - Use numerals for 11 and up.
+- Always use numerals with units, symbols, and data: 3%, $5, 8 GB, 10M+ users.
+- Large round figures take numerals + abbreviation in data-forward contexts (10M users, $8K); narrative prose may spell them out (ten million) when the rhythm wants it.
+- Don't open a sentence with a numeral: restructure, or spell it out if you can't.
+- Ranges repeat the unit on both ends with an en dash: $8K–$22K, 2–4 pm.
 
 ### Bulleted lists
 - Always introduce bulleted lists with a colon (not a semicolon).
@@ -98,7 +125,7 @@ For designed collateral, use date and time formats appropriate to the target reg
 **24-hour clock:** 14:00 GMT
 
 ### Percent or %
-Spell out "percent" in body text. Use the % symbol in pull quotes, headers, or headlines.
+Use numerals with the % symbol for all percentages, everywhere: body text, pull quotes, headers ("cut onboarding time by 40%"). Specific figures are what readers believe and what AI engines lift. If a percentage would open a sentence, restructure the sentence.
 
 ### Acronyms and initialisms
 Spell out the full name or process followed by the abbreviation in parentheses the first time it appears in text.
@@ -110,8 +137,18 @@ Exceptions:
 ### Dashes
 Don't use em dashes (—). They read as an AI tell, and we've cut them. Use a comma, colon, semicolon, parentheses, or two sentences instead. (Enforced in the bolt-stop-slop filter.)
 
+En dashes (–) are allowed in ranges only: Jun 15–18, 2–4 pm, $8K–$22K. Never as a stand-in for an em dash.
+
 ### Currency symbols
 Use the appropriate symbols or currency code for all currencies.
+
+### Inclusive language
+Write for the whole audience without announcing that you're doing it:
+- Plain language is the inclusive default: jargon excludes more readers than any other choice.
+- Use "they" for an unspecified person; name roles, not genders ("the developer... they").
+- Swap loaded metaphors for plain ones: "gut check" or "coherence check" over "sanity check," "gap" over "blind spot," "allowlist/blocklist" over "whitelist/blacklist," "primary/replica" over "master/slave," "legacy" over "grandfathered."
+- "Team," "folks," or "everyone" over "guys" in copy.
+- Describe people the way they describe themselves; when in doubt, ask or omit.
 
 
 ---

@@ -11,11 +11,29 @@ One pass. Catch everything. This skill replaces both the AI-tells audit and the 
 Read the draft once through, applying every rule below simultaneously. Fix violations in place. Don't flag them for later. Rewrite them now.
 
 
+## 0. Fingerprint check (mechanical, first)
+
+Before the read-through, sweep for P0 fingerprints: near-certain AI artifacts that end credibility on sight. These are search-and-fix, no judgment required:
+
+- **Unfilled placeholders:** [Your Name], [INSERT LINK], [Company], 2026-XX-XX
+- **Citation markup leaks:** oaicite, contentReference, turn0search, attached_file, grok_card
+- **AI-tool URL parameters:** utm_source=chatgpt.com / openai / copilot in any link
+- **Knowledge-cutoff disclaimers:** "As of my last update...", "I don't have access to real-time..."
+- **Chatbot artifacts:** "I hope this helps", "Let me know if...", "Great question", "Certainly!"
+
+Any one of these shipping in public is worse than every other violation in this file combined.
+
+
 ## 1. Kill dead language
 
-These phrases are AI fingerprints. Remove every instance. No exceptions. See [references/banned.md](references/banned.md) for the full list organized by category.
+Phrases die on sight; words are tiered. See [references/banned.md](references/banned.md) for the full catalog:
 
-The short version: if a phrase could appear in any article about any topic and still make grammatical sense, it's filler. Cut it.
+- **Phrases** (throat-clearing, vague attribution, chatbot artifacts, compulsive summaries, future closers, false breadth): kill every instance.
+- **Tier 1 words** (delve, tapestry, seamless, leverage-as-verb...): a finding on sight, any register.
+- **Tier 2 words** (crucial, robust, foster, streamline...): legitimate alone; a finding in clusters of 2+ per paragraph. Technical terms (robust, scalable, ecosystem) are fine in dev-facing prose.
+- **Tier 3 words** (significant, innovative, compelling...): a finding only at density, 3+ per ~300 words.
+
+This is the density principle from §10 made mechanical: a single Tier 2 word is not slop; a pileup is. The short version for phrases: if it could appear in any article about any topic and still make grammatical sense, it's filler. Cut it.
 
 
 ## 2. Fix the structure
@@ -53,6 +71,8 @@ Put the reader in the room. "You" beats "People." Specifics beat abstractions.
 Paragraph openers that create artificial flow. "This belief defines how we build Bolt.new." "This is personal for us." "That same pattern shows up across the team."
 
 If the paragraph follows logically from the prior one, it doesn't need a connector. If it needs one, use something a person would say out loud.
+
+Also in the full catalog, same severity as the patterns above: **superficial -ing analyses** ("..., highlighting the importance of"), **false ranges** ("from startups to Fortune 500s"), **synonym cycling** (developers → engineers → practitioners), **formulaic conclusions** ("Despite these challenges..."), and **significance inflation** ("stands as a testament to"). See [references/structures.md](references/structures.md).
 
 
 ## 3. Enforce voice rules
@@ -148,7 +168,37 @@ Rate the draft 1-10 on each dimension:
 **Below 35/50: revise before presenting.** Go back through the draft and fix the weakest dimension first.
 
 
-## 8. The editorial judgment call
+## 8. Second pass and self-audit
+
+After revising, re-read the **rewrite**, not the original. Rewrites grow their own tells: recycled transitions, a copula swap that snuck back in, a fresh Tier 2 cluster. Ask one question — *"What makes this still read as AI-generated?"* — answer it in two or three blunt bullets, fix those, then score. One corrective pass is the cap; a third rarely finds anything new and costs a full regeneration.
+
+
+## 9. Severity, channels, and what to preserve
+
+**Severity (maps to mr-gay's Red/Yellow/Blue):**
+- **P0 / Red** — fingerprints (§0) and vague attribution propping a factual claim. Never ships.
+- **P1 / Yellow** — Tier 1 vocabulary, kill-on-sight phrases, structural patterns (§2). Fix before presenting.
+- **P2 / Blue** — Tier 2/3 density, rhythm, and texture (§4–6). Fix in the revise loop; judgment applies.
+
+**Channel calibration** (rules flex by destination; em dashes are zero everywhere):
+
+| Channel | Adjustment |
+|---|---|
+| Blog / long-form / web | Full strength |
+| Social | Structure rules relax (fragments and platform emoji conventions allowed); vocabulary tiers still enforced |
+| Email | Full strength; subject lines may fragment |
+| Docs / technical | Tier 2 technical words (robust, scalable, ecosystem, comprehensive) are legitimate where they carry real meaning; everything else full strength |
+
+**Preserve on sight — never sand these off:**
+- Specific, hard-to-fabricate detail (names, numbers, dates, first-hand observations)
+- Mixed feelings and unresolved tension
+- Era-bound references, and deliberate repetition of the right word
+- Genuine asides, self-corrections, and lopsided emphasis
+
+A scrub that removes these made the draft worse, not cleaner. If the rewrite is more polished but less alive, put the life back.
+
+
+## 10. The editorial judgment call
 
 The question is never "does this pattern exist in the text?" It's "is this an intentional rhetorical choice, or is AI defaulting to a pattern?"
 

@@ -66,7 +66,7 @@ Announcing insight rather than delivering it.
 | Pattern | Problem |
 |---------|---------|
 | "By the time X, I was Y." | Narrative template |
-| "X that isn't Y" | Indirect. Say "X is broken." |
+| "X that isn't Y" | Indirect. Say "X is broken" |
 
 ## False agency
 
@@ -96,6 +96,60 @@ Floating above the scene.
 | "People tend to..." | Armchair sociologist |
 
 **Fix:** Put the reader in the room. "You" beats "People."
+
+## Superficial -ing analyses
+
+Present-participle phrases bolted onto sentence ends to fake depth.
+
+| Pattern | Problem |
+|---------|---------|
+| "..., highlighting the importance of X" | Analysis-shaped filler |
+| "..., underscoring its commitment to Y" | Significance announced, not shown |
+| "..., reflecting a broader trend" | Unearned generalization |
+| "..., showcasing / symbolizing / emphasizing..." | Decorative depth |
+
+**Fix:** End the sentence at the fact. If the significance is real, give it its own sentence with a specific, checkable claim.
+
+## False ranges
+
+"From X to Y" pairs that fake breadth with endpoints that aren't on a real scale.
+
+| Pattern | Problem |
+|---------|---------|
+| "from startups to Fortune 500s" | Fake spectrum standing in for "two customer types" |
+| "from marketing to engineering and beyond" | "And beyond" = nothing |
+| "everything from A to Z" | Vague totality |
+
+**Fix:** Name the actual set, or give the two or three real examples.
+
+## Synonym cycling (elegant variation)
+
+Rotating synonyms to dodge repeating a word: developers → engineers → practitioners → technologists in one passage.
+
+**Fix:** Pick the right word and repeat it. Repeating the correct term is clarity, not a flaw. Humans vary words occasionally and deliberately; AI does it compulsively.
+
+## Formulaic conclusions
+
+| Pattern | Problem |
+|---------|---------|
+| "Despite these challenges, X continues to..." | Challenges-then-reassurance template |
+| "As X evolves, Y will play an increasingly important role" | Future-outlook boilerplate |
+| A closer restating the piece ("In conclusion / Overall...") | Compulsive summary |
+
+**Fix:** End on your strongest specific point. If long-form genuinely needs a summary, summarize the argument, not the structure.
+
+## Significance inflation
+
+Monumentalizing the mundane. Cousin of copula inflation (see SKILL.md §3).
+
+| Pattern | Problem |
+|---------|---------|
+| "stands as a testament to" | Unearned monument |
+| "marks a pivotal moment / a key turning point" | History-making without history |
+| "left an indelible mark" | Same |
+| "plays a vital/crucial role in" | Importance announced, not shown |
+
+**Fix:** State what it did, with a number, a name, or a consequence. Real significance survives specifics; fake significance needs the phrasing.
 
 ## Overly smooth connectors
 
@@ -143,4 +197,4 @@ Every sentence needs a subject doing something.
 | Pattern | Problem |
 |---------|---------|
 | Lazy extremes (every, always, never, everyone, everybody, nobody) | False authority. Use specifics instead of sweeping claims. |
-| All adverbs (-ly words, "really," "just," "literally," "genuinely," "honestly," "simply," "actually") | Empty emphasis. See [references/banned.md](banned.md) for the full list. |
+| All adverbs (-ly words, "really," "just," "literally," "genuinely," "honestly," "simply," "actually") | Empty emphasis. See references/banned.md for the full list and the vocabulary tiers. |

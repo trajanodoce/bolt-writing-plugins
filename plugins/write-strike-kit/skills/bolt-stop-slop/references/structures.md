@@ -198,3 +198,14 @@ Every sentence needs a subject doing something.
 |---------|---------|
 | Lazy extremes (every, always, never, everyone, everybody, nobody) | False authority. Use specifics instead of sweeping claims. |
 | All adverbs (-ly words, "really," "just," "literally," "genuinely," "honestly," "simply," "actually") | Empty emphasis. See references/banned.md for the full list and the vocabulary tiers. |
+
+## Formatting tells
+
+How the copy is dressed can be as loud a tell as the words. Prose channels only; social has its own conventions (see the channel table in SKILL.md).
+
+| Pattern | Fix |
+|---------|-----|
+| Bold-lead-in bullet walls (every bullet opens "**Header:** description") | One such list per piece, and only when the items are genuinely parallel. Otherwise write prose, or unbold. |
+| Decorative emoji on headers or bullets outside social | Remove. Emoji are a social-platform convention, not typography. |
+| Colon pileup (a colon-hinged sentence in every paragraph) | The em-dash ban displaces into colons and semicolons. One colon-driven sentence per paragraph, at most. |
+| Bullet-itis (three-plus lists per screen doing prose's job) | If the items aren't parallel or scannable by design, it's paragraphs wearing a list's clothes. Write the paragraph. |

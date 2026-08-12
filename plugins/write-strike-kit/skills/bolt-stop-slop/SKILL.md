@@ -72,7 +72,7 @@ Paragraph openers that create artificial flow. "This belief defines how we build
 
 If the paragraph follows logically from the prior one, it doesn't need a connector. If it needs one, use something a person would say out loud.
 
-Also in the full catalog, same severity as the patterns above: **superficial -ing analyses** ("..., highlighting the importance of"), **false ranges** ("from startups to Fortune 500s"), **synonym cycling** (developers → engineers → practitioners), **formulaic conclusions** ("Despite these challenges..."), and **significance inflation** ("stands as a testament to"). See [references/structures.md](references/structures.md).
+Also in the full catalog, same severity as the patterns above: **superficial -ing analyses** ("..., highlighting the importance of"), **false ranges** ("from startups to Fortune 500s"), **synonym cycling** (developers → engineers → practitioners), **formulaic conclusions** ("Despite these challenges..."), **significance inflation** ("stands as a testament to"), and the **formatting tells** (bold-lead-in bullet walls, decorative emoji outside social, colon pileups, bullet-itis). See [references/structures.md](references/structures.md).
 
 
 ## 3. Enforce voice rules
@@ -112,6 +112,9 @@ Vary it. Mix short punchy lines with longer ones. If three consecutive sentences
 
 ### Lists
 Two items beat three. AI defaults to tricolons (groups of three with escalating rhythm). One triple per piece is fine if it genuinely earns it. More than that is a pattern. Default to pairs.
+
+### Punctuation displacement
+The em-dash ban pushes drafts into colon pileups and semicolon chains instead. One colon-driven sentence per paragraph, at most. If every sentence has a hinge, nothing hinges.
 
 ### Paragraph endings
 Vary how paragraphs end. If every paragraph closes with a punchy one-liner, it reads as a formula. Let some paragraphs end mid-thought and carry into the next.

@@ -115,6 +115,14 @@ Stress position governs how a sentence ends. This governs how it starts, and whe
 
 Every piece of writing should leave the reader with one thing they didn't know or hadn't considered before. After reading a draft, ask: what's the single takeaway? If you can't identify it, or if there are five competing candidates, the piece is trying to do too much. Report this clearly. It's one of the most valuable things you can tell a writer, and one of the hardest to see from inside the draft.
 
+### Lead check
+
+Does the first paragraph start with the thing (a fact, a number, a person, a scene) or the topic ("In the world of...")? Run the delete-the-first-paragraph test: if the piece works without it, the real lead was buried in paragraph two, and that's a Red. Then check the promise: a lead commits the piece to being a certain kind of piece. If the lead promises a how and the body delivers a why, flag the mismatch.
+
+### Kicker check
+
+How does it end: on a fact, an image, or a consequence, or on a summary of what the reader just read? A summary ending is a Yellow, and the fix is almost always deleting the last paragraph and letting the one above it land. The kicker should be the second-best line in the piece; if the last line could close any piece on the topic, it closes none of them. For conversion copy, read the line above the CTA: the ask lands only as hard as that line earned.
+
 ### Citation format check
 
 Citations are part of claims-and-proof, and the right *format* depends on the content type. First confirm every factual claim, stat, or direct quote has a credible source, and that it points to the **origin, not the middleman** (a Forrester stat cited to Forbes is a Yellow flag). Then check the format matches the type. The source of truth is bolt-TOV-and-guidelines, "Bibliography and attribution":
@@ -157,6 +165,8 @@ Crisp prose commits; hedging is how a draft refuses to. Hunt three things: hedge
 ### Claims and proof
 
 You came up through newsrooms. Edit like it. Walk the draft claim by claim and ask two things. First, where's it from? Tag each checkable claim: sourced to a named original, secondhand (cited to a middleman, not the origin), unsourced but checkable, or unfalsifiable air. Secondhand stats get traced to the primary source before they run, the Forrester report, not the blog that quoted it. Second, is the proof as big as the claim? "Faster" needs a number. "The best" needs evidence, or it gets cut down to something true. A bold claim on thin proof is the flag: "blazing fast" with no benchmark, "everyone knows" with nobody named. Significance inflation is the same flag in a suit: "a pivotal moment," "a testament to," "plays a crucial role": monuments need receipts too. Don't invent the proof. Demand it, or shrink the claim to what the evidence carries.
+
+**Upstream note:** the generative counterparts to these lenses (lead, stress position, given-new, kicker, concreteness, rhythm) live in the **write-strike** skill's prose-craft reference (write-strike-kit plugin, references/prose-craft.md). When the same lens keeps flagging across a writer's drafts, say so and point them there. The fix belongs in the drafting, not the edit.
 
 ## The slop pass: last line of defense
 

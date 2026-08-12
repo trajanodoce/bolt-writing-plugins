@@ -95,7 +95,7 @@ Options:
 #### Quick-and-dirty workflow
 
 1. **Intake:** Ask two questions only: target persona (from bolt-buyer-personas) and reference sources or constraints. Skip all type-specific intake.
-2. **Draft:** Apply bolt-TOV-and-guidelines. Use Bolt.new TOV (no voice selection). Follow the type-specific drafting rules for the detected content type, but skip research, outline, and approval gates.
+2. **Draft:** Apply bolt-TOV-and-guidelines plus the craft passes in `${CLAUDE_PLUGIN_ROOT}/skills/write-strike/references/prose-craft.md` (quick means skipping ceremony, not craft: the lead, stress position, concreteness, and rhythm rules still apply). Use Bolt.new TOV (no voice selection). Follow the type-specific drafting rules for the detected content type, but skip research, outline, and approval gates.
 3. **Stop slop audit:** Full audit via the `bolt-stop-slop` filter (same pass bar it defines). No shortcuts.
 4. **Present:** Deliver clean copy with a suggested title/headline and meta description (if web-published). No alternative versions offered.
 
@@ -297,6 +297,8 @@ Keep it scannable. The user should be able to approve, revise, or redirect in un
 
 Apply every rule from the bolt-TOV-and-guidelines style guide (`${CLAUDE_PLUGIN_ROOT}/skills/bolt-TOV-and-guidelines/SKILL.md`). That file is the single source of truth for tone of voice, editorial guidelines, and writing tips. The stop-slop / AI-tell filter lives in the `bolt-stop-slop` skill. Do not duplicate those rules here. Read them from the source.
 
+**Then build with the craft passes in `${CLAUDE_PLUGIN_ROOT}/skills/write-strike/references/prose-craft.md`.** TOV governs voice and mechanics; prose-craft governs construction: the promise, the lead, sentence engineering (actor-verb, stress position), the concreteness ladder, sentence music, given-new threading, the kicker, and the 10% cut. Work them in drafting order on every piece longer than a one-liner. Drafting to those passes is what keeps stop-slop's findings short; the audit still runs regardless.
+
 **For blog, long-form, and website copy:** also apply the GEO/AEO writing rules in `${CLAUDE_PLUGIN_ROOT}/skills/write-strike/references/SEO-GEO-drafting.md`. These rules govern passage-level extractability, answer-first structure, information gain, and AI citation optimization. They layer on top of the TOV guidelines. **Citation exception:** the GEO inline-attribution rule applies to blog and website copy only; long-form uses the Chicago superscript + Works Cited appendix format instead (see bolt-TOV-and-guidelines).
 
 ### The Ogilvy gut-check (every persuasion piece, regardless of voice)
@@ -410,7 +412,7 @@ Present all versions side by side so the user can compare and pick. Run stop-slo
 
 After drafting, run the `bolt-stop-slop` skill against the draft (`${CLAUDE_PLUGIN_ROOT}/skills/bolt-stop-slop/SKILL.md`), the single source of truth for the AI-tell filter and the 35/50 scoring rubric. Score the draft on directness, rhythm, trust, authenticity, and density. 35/50 minimum to pass. Fix every violation before presenting. If the draft scores below 35, revise and re-audit.
 
-**For Light workflows (social, short emails):** Run the audit mentally. Don't invoke the full process for a tweet.
+**For Light workflows (social, short emails):** skip the 35/50 scoring ceremony, but run the mechanical checks for real, not mentally: the §0 fingerprint sweep, Tier 1 vocabulary, banned phrases, em dashes, and adverbs. Short copy ships more often than anything else, which makes it the main leak. "It's just a tweet" is how tells get published.
 
 
 ## Step 6: Present

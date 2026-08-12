@@ -70,6 +70,8 @@ For deeper planning (a series, new pillars, a backlog) use `/content-strategy`. 
 
 ## Workflow 1: Write from Scratch
 
+Before drafting, work the craft passes in `${CLAUDE_PLUGIN_ROOT}/skills/write-strike/references/prose-craft.md`: the promise, the lead (start with the thing, not the topic), sentence engineering, the concreteness ladder, sentence music, given-new threading, the kicker, and the 10% cut before the audit. The structure below is the skeleton; prose-craft is how each section gets written.
+
 ### Post structure
 ```
 [Title] — includes target keyword, sentence case, under 60 chars for SEO

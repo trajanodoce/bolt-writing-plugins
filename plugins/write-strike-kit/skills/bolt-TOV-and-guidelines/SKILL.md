@@ -156,6 +156,8 @@ Write for the whole audience without announcing that you're doing it:
 
 ## Writing Tips
 
+These are the line-level rules every piece follows. The full drafting craft (leads, sentence engineering, rhythm, kickers, the 10% cut) lives in write-strike's `${CLAUDE_PLUGIN_ROOT}/skills/write-strike/references/prose-craft.md`: writers work those passes at draft time, then these rules and the stop-slop filter gate what ships.
+
 ### The three-rules test
 Run every line that carries weight (headlines, claims, openers, CTAs) through three questions:
 1. **Can I picture it?** "Streamline your workflow" shows nothing. "Cut your Monday report from four hours to 15 minutes" shows a clock.

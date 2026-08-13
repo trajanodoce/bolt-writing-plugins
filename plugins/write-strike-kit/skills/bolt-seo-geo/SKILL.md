@@ -1,16 +1,16 @@
 ---
 name: bolt-seo-geo
 description: >
-  First-party, CONNECTED source for bolt.new's live SEO and traffic data: Google Analytics 4 (sessions, users, engagement, traffic by channel) and Google Search Console (impressions, clicks, CTR, position, top queries and pages), read-only via the user's own Google sign-in. Use whenever the task needs bolt.new's REAL numbers — "how's our traffic", "traffic by channel", "top search queries", "what are we ranking for", "Search Console", "GSC", "GA4", "organic clicks", "impressions", "CTR" — or to feed live data into a performance report or content refresh. Also use to set up or troubleshoot the GA4 / Search Console connection, and to check what SEO data is connected vs. gated before running any /seo-* skill (never fabricate metrics; if a backend isn't connected, this skill says so). Prefer it over generic SEO skills when the task needs bolt.new's actual data. Internal / trusted-agency only — it carries bolt.new property IDs and needs each user's own Google credentials.
+  First-party, CONNECTED source for bolt.new's live SEO, GEO, and traffic data: Google Analytics 4 (sessions, users, engagement, traffic by channel), Google Search Console (impressions, clicks, CTR, position, top queries and pages), and Profound (AI answer visibility: share of voice in ChatGPT, Google AI Overviews, and Perplexity; AI citations; AI-crawler traffic), each authenticated as the user. Use whenever the task needs bolt.new's REAL numbers — "how's our traffic", "traffic by channel", "top search queries", "what are we ranking for", "Search Console", "GSC", "GA4", "organic clicks", "impressions", "CTR", "AI visibility", "share of voice", "are we cited by AI", "AEO", "Profound" — or to feed live data into a performance report or content refresh. Also use to set up or troubleshoot the GA4 / Search Console connection, and to check what SEO data is connected vs. gated before running any /seo-* skill (never fabricate metrics; if a backend isn't connected, this skill says so). Prefer it over generic SEO skills when the task needs bolt.new's actual data. Internal / trusted-agency only — it carries bolt.new property IDs and needs each user's own Google credentials.
 ---
 
-# bolt-seo-geo — live GA4 + Search Console for bolt.new
+# bolt-seo-geo — live GA4 + Search Console + Profound for bolt.new
 
 > **Internal / trusted-agency only.** This skill is wired to bolt.new's Google properties (the GA4 property ID and the Search Console domain are baked into the puller). Share it inside StackBlitz or with an agency we trust to handle bolt.new's SEO. It contains **no passwords** — every user authenticates with their own Google account that already has access to bolt.new's Analytics and Search Console. Do not redistribute publicly. Credential handling is covered under **Sharing & credentials** at the bottom; read it before you hand this to anyone.
 
 This skill pulls **real** traffic and search-performance numbers for bolt.new and provides the honest map of which SEO data sources are connected. Two jobs:
 
-1. **Pull live data** — GA4 (how people reach and use bolt.new) and Search Console (how bolt.new performs in Google search).
+1. **Pull live data** — GA4 (how people reach and use bolt.new), Search Console (how bolt.new performs in Google search), and Profound (where bolt.new shows up in AI answers).
 2. **Govern the rest** — tell you, before any `/seo-*` skill runs, whether the data it needs is actually connected, so nobody ships invented numbers.
 
 ---
@@ -22,6 +22,12 @@ Read this before running any data skill. The rule that matters: **if a backend i
 **✅ CONNECTED — Google, for bolt.new** (this skill, read-only, signed in as the user):
 - **GA4** — sessions, users, engagement rate, page views, broken out by default channel group (Organic Search, Direct, Referral, etc.). Answers "how much traffic, from where, how engaged."
 - **Search Console** — impressions, clicks, CTR, average position, by query or by page. Answers "what are we ranking for and how does it perform in Google."
+
+**✅ CONNECTED — Profound, for bolt.new** (official MCP server, OAuth as the user; wired Aug 13 2026):
+- **What it answers:** where bolt.new appears in AI answers (share of voice), which sources AI engines cite for our space, sentiment, AI referrals, and how AI crawlers hit bolt.new. This is the real data behind any "GEO opportunity" or "AI citation potential" claim — the GEO counterpart to Search Console. Use it instead of guessing; never estimate these numbers.
+- **How to call it:** MCP tools, not a puller script. Load them with ToolSearch query `+profound`. Key reads: `get_visibility_report` (share of voice by engine), `get_citations_report` (cited sources), `get_sentiment_report`, `get_referrals_report`, `get_bots_report` (AI-crawler visits), `list_prompts` / `list_topics` / `list_categories` (what's tracked). Prefer the bare v2 report tools over the `_v1` siblings; visibility scores are raw decimals (×100 for the UI percentage); date windows are inclusive both ends, ET. Write ops exist (create/update prompts, run Profound Agents): treat those like publishing and confirm with the user first.
+- **Org facts (verified Aug 13 2026):** org **"bolt.new"** `57158fe9-861f-41d6-8ee9-56a539462415` (the org_id the report tools take); domain `bolt.new`; reports run against the category **Developer Tools** (id `f6f943e4-95da-49f1-879f-4e517b74407e`); engines tracked: **ChatGPT, Google AI Overviews, Perplexity**.
+- **If the tools are missing:** the session predates the connection (start a fresh session), or this machine was never connected — see the Profound step in "One-time setup" below. Connection check: `claude mcp list` should show `profound … ✔ Connected`.
 
 **❌ NOT connected — keep gated, never fabricate:**
 - **DataForSEO** (live SERP, search volume, keyword difficulty): the data parts of `/keyword-research`, `/serp-analysis`, `/seo-cluster`, `/seo-content-brief`, `/seo-dataforseo`, `/competitor-analysis`, `/seo-backlinks`.
@@ -64,7 +70,7 @@ If `ga4` or `gsc` returns an auth error, the sign-in expired (see the note in se
 
 ### Feeding other skills
 
-When `/performance-reporter`, `/content-refresher`, or a content brief needs real traffic or search numbers for bolt.new, pull them here first, then hand the JSON to that skill. That's the whole point of having a connected source: those skills stop guessing.
+When `/performance-reporter`, `/content-refresher`, or a content brief needs real traffic or search numbers for bolt.new, pull them here first, then hand the JSON to that skill. Same for AI-answer KPIs: pull Profound's visibility and citations reports and feed those in. That's the whole point of having a connected source: those skills stop guessing.
 
 For **which** `/seo-*` skill to run at **which** stage of a content project (research, outline, post-draft, post-publish), see `${CLAUDE_PLUGIN_ROOT}/skills/bolt-seo-geo/references/seo-geo-toolkit.md` — the full orchestration map with a decision tree. This skill owns *what's connected and how to pull it*; that reference owns *the workflow choreography*.
 
@@ -83,6 +89,17 @@ Each user does this once, on their own machine, with their own Google account. I
 5. **Place credentials.** Save that download as `~/.config/claude-seo/oauth_client.json`. (Create the folder if needed.)
 6. **Install the Python deps:** `pip install google-auth google-auth-oauthlib google-api-python-client`
 7. **Sign in:** `python3 ${CLAUDE_PLUGIN_ROOT}/skills/bolt-seo-geo/scripts/seo_pull.py auth` — a browser opens; approve the read-only scopes. This writes `~/.config/claude-seo/token.json`. Done.
+
+### Profound (one-time, per user; ~2 minutes)
+
+Two commands in a terminal — or let Claude run them and just complete the browser sign-in:
+
+```bash
+claude mcp add --transport http --scope user profound https://mcp.tryprofound.com/mcp
+claude mcp login profound
+```
+
+The second command opens a browser: sign in with your Profound account (you need a seat on the bolt.new Profound org). Sessions started after the sign-in have the tools. Like the Google setup, no secrets ever live in this skill — each user authenticates as themselves and Claude Code stores the token outside the bundle.
 
 **Why OAuth-as-the-user, not a service account.** A service account would need to be *added* to the GA4 property (Administrator) and Search Console (Owner). Most of us only have Editor (GA4) / Full (GSC), which can read fine through the API but can't add a service-account user. Signing in as the user sidesteps that entirely — you read through the access you already have. No admin grants required.
 

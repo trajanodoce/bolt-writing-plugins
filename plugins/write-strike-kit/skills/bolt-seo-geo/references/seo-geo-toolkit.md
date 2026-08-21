@@ -2,7 +2,7 @@
 
 Which SEO/GEO skill to run at which stage of a content project. This reference owns the **choreography**; the skill's `SKILL.md` owns **what data is connected and how to pull it**.
 
-**Before running anything, check connection status in `../SKILL.md` ("What's connected").** Google (GA4 + Search Console) and Profound (AI answer visibility) are connected for bolt.new through this skill. DataForSEO, Firecrawl, and PageSpeed/CrUX are not. If a trigger below calls a skill whose backend isn't connected, skip it (say so in one line) or ask the user for the data — never fabricate volumes, difficulty, or rankings. Also skip any trigger when the user already handed you the data it would fetch (e.g. they gave you keywords → skip keyword research).
+**Before running anything, check connection status in `../SKILL.md` ("What's connected").** Google (GA4 + Search Console) is connected for bolt.new through this skill. DataForSEO, Firecrawl, and PageSpeed/CrUX are not. **Profound / AI-answer visibility is not connected either** (Enterprise-gated, ruled out on cost Aug 21 2026): read those numbers from the latest monthly Profound snapshot (Taylor keeps it at `~/Documents/Profound-Snapshots/YYYY-MM.md`; others ask her for it), cite its date window, and never estimate them. If a trigger below calls a skill whose backend isn't connected, skip it (say so in one line) or ask the user for the data — never fabricate volumes, difficulty, or rankings. Also skip any trigger when the user already handed you the data it would fetch (e.g. they gave you keywords → skip keyword research).
 
 ---
 
@@ -16,10 +16,10 @@ These fire when their stage and conditions are met **and** the data backend each
 |-----------|--------|
 | Content type is blog, long-form, or website copy AND the user hasn't provided target keywords | Run `/keyword-research` for the topic. Use results to inform the outline. *(Needs DataForSEO — gated. Ask the user for target keywords instead.)* |
 | Content type is blog or long-form AND this is a Content Bonanza workflow | Run `/serp-analysis` on the primary keyword to see what Google rewards (format, depth, features, AI Overviews). *(Needs DataForSEO — gated.)* |
-| The user mentions a competitor by name or asks to differentiate | Run `/competitor-analysis` on the named competitor. *(Data-heavy parts need DataForSEO; the strategic read does not.)* For AI share of voice against the named competitor, add Profound's visibility report (connected). |
+| The user mentions a competitor by name or asks to differentiate | Run `/competitor-analysis` on the named competitor. *(Data-heavy parts need DataForSEO; the strategic read does not.)* For AI share of voice against the named competitor, read the latest Profound snapshot file (not connected — see `../SKILL.md`). |
 | Content type is blog and the piece is part of a series or hub | Run `/seo-cluster` to validate the topic-cluster structure and internal-link plan. *(Intent-only mode is safe with no backend; SERP-overlap mode needs DataForSEO.)* |
 | You need bolt.new's current traffic or search performance to ground the piece | Pull it with this skill's `ga4` / `gsc` commands (connected). |
-| GEO priority is high, the user asks where bolt.new shows up in AI answers, or an idea's "GEO opportunity" needs grounding | Pull Profound (connected, via ToolSearch `+profound`): `get_visibility_report` / `get_citations_report` for the Developer Tools category. Real AI-visibility data, not a guess. |
+| GEO priority is high, the user asks where bolt.new shows up in AI answers, or an idea's "GEO opportunity" needs grounding | Read the latest monthly Profound snapshot (on Taylor's machine: `~/Documents/Profound-Snapshots/YYYY-MM.md`) for Developer Tools share of voice and citation share, and quote its date window. *(Profound is NOT programmatically connected — no MCP tools, no API. If there's no snapshot or it's too stale, say so and offer a browser read or ask the user to paste the figures. Never guess.)* |
 
 ### During drafting (Step 4)
 
@@ -69,7 +69,7 @@ Offer when the user shares a live URL or asks about performance:
 
 | Skill | When to offer | What it does |
 |-------|--------------|-------------|
-| `/performance-reporter` | User wants a report/dashboard on content performance | SEO/GEO report with KPI tracking — **feed it real numbers from this skill's `ga4`/`gsc` pulls, plus Profound visibility/citations for the AI-answer KPIs** |
+| `/performance-reporter` | User wants a report/dashboard on content performance | SEO/GEO report with KPI tracking — **feed it real numbers from this skill's `ga4`/`gsc` pulls; for AI-answer KPIs use the latest Profound snapshot file and label its date window** |
 | `/content-refresher` | Published content is aging or losing traffic | What to update: stale stats, new competitors, decayed sections — **ground it in this skill's GSC trend pull** |
 | `/seo-audit` | User shares a live URL and wants a full audit | Comprehensive page audit *(crawl steps need Firecrawl — gated)* |
 | `/seo-page` | User wants a deep single-page analysis | One URL: content, keywords, links, schema, performance |
@@ -83,7 +83,7 @@ Offer when the user shares a live URL or asks about performance:
 | Skill / source | Connects to | Status | When to use |
 |----------------|-------------|--------|-------------|
 | **bolt-seo-geo** (this skill) | GA4 + Search Console for bolt.new | ✅ connected | Real traffic and search-performance numbers for bolt.new. The default for "our actual data." |
-| **Profound** (via this skill) | AI answer visibility for bolt.new (ChatGPT, AI Overviews, Perplexity) | ✅ connected | Share of voice, AI citations, AI-crawler traffic. The real data behind GEO-priority calls. MCP tools: ToolSearch `+profound`. |
+| **Profound** (web UI only) | AI answer visibility for bolt.new (ChatGPT, AI Overviews, Perplexity) | ❌ not connected | Share of voice, AI citations, AI-crawler traffic. **No MCP tools and no API** — Enterprise-gated, ruled out on cost. Read the latest monthly snapshot (Taylor keeps it), or offer a browser read of the dashboard. |
 | `/seo-google` | GSC, PageSpeed, CrUX, GA4 (generic) | partial | Generic Google-API skill. For bolt.new, prefer this skill's puller; `/seo-google` is for the PageSpeed/CrUX angles, which aren't wired. |
 | `/seo-dataforseo` | Live SERP, keyword metrics, backlinks | ❌ gated | Search volume, difficulty, SERP features, competitor data — only with the DataForSEO extension. |
 | `/seo-firecrawl` | Full-site crawl | ❌ gated | Site crawl, internal-link inventory — only with Firecrawl. |
@@ -97,7 +97,7 @@ Offer when the user shares a live URL or asks about performance:
 ```
 RESEARCH PHASE
   └─ Need bolt.new's current numbers? → bolt-seo-geo: ga4 / gsc  (connected)
-  └─ Need AI-answer visibility (GEO)? → Profound: visibility / citations  (connected)
+  └─ Need AI-answer visibility (GEO)? → latest Profound-Snapshots file  (NOT connected; no API)
   └─ Do we have keywords?
        ├─ No → /keyword-research  (DataForSEO gated → ask user for keywords)
        └─ Yes → Do we know what's ranking?
@@ -115,6 +115,6 @@ DRAFT COMPLETE
        └─ No (social, email, internal) → skip SEO/GEO skills
 
 POST-PUBLISH
-  └─ Tracking performance? → bolt-seo-geo ga4/gsc + Profound visibility/citations → /performance-reporter, /content-refresher
+  └─ Tracking performance? → bolt-seo-geo ga4/gsc (live) + latest Profound snapshot (manual) → /performance-reporter, /content-refresher
   └─ User shares live URL? → offer /seo-audit (crawl gated) or /seo-page
 ```

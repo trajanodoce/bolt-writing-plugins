@@ -488,7 +488,7 @@ Run a focused SEO/GEO research pass to ground the ideation in data, then weave f
 
 For ideation specifically, the useful order is: content strategy and pillars first (`/content-strategy`), then keyword and SERP research (`/keyword-research`, `/serp-analysis`), competitor and gap analysis (`/competitor-analysis`, `/content-gap-analysis`), topic clustering (`/seo-cluster`), and bolt.new's own GA4/GSC numbers where they ground the angle. Offer deeper passes (`/seo-geo`, `/entity-optimizer`, `/seo-content-brief`, and the others in the map) based on the goal.
 
-Run only the steps whose backend is connected: Google (GA4 + Search Console) and Profound (AI answer visibility: share of voice, citations) are wired via `bolt-seo-geo`; DataForSEO and Firecrawl are gated, so ask the user for that data instead of fabricating volumes, difficulty, or rankings. Steps 1, 4, and 6 plus the trend scan run fine with no backend.
+Run only the steps whose backend is connected: Google (GA4 + Search Console) is wired via `bolt-seo-geo`; DataForSEO and Firecrawl are gated, so ask the user for that data instead of fabricating volumes, difficulty, or rankings. **Profound / AI-answer visibility is not connected** (no MCP tools, no API — Enterprise-gated and ruled out on cost): those figures come from the latest monthly snapshot file that `bolt-seo-geo` documents, quoted with its date window, never estimated. Steps 1, 4, and 6 plus the trend scan run fine with no backend.
 
 ### Schwartz thought exercise
 
@@ -515,7 +515,7 @@ After research and the Schwartz thought exercise, present a prioritized content 
 - **Messaging angle**: the Schwartz-informed headline/lead direction (one to two sentences)
 - **Why this idea**: the data point or gap that makes it worth doing
 - **Estimated effort** (light, medium, heavy)
-- **GEO opportunity**: whether this topic has AI citation potential, grounded in Profound data via `bolt-seo-geo` (connected), not a guess
+- **GEO opportunity**: whether this topic has AI citation potential. Ground it in the latest Profound snapshot file via `bolt-seo-geo` (manual, not a live connection) and say which month it came from; if there's no usable snapshot, mark this "not grounded" rather than guessing
 
 Organize by priority: high-impact quick wins first, then strategic investments, then long-tail opportunities.
 
@@ -566,6 +566,6 @@ SEO/GEO data, tooling, and the full stage-by-stage orchestration (which `/seo-*`
 When to reach for `bolt-seo-geo`:
 - **Research (Step 2):** you need keywords, SERP or competitor analysis, a topic cluster, or bolt.new's real traffic and search numbers.
 - **Post-draft (Steps 5-6):** the piece will live on bolt.new and needs meta tags, schema, internal-linking, or GEO citation optimization.
-- **Any data skill, any stage:** confirm the backend is connected in `bolt-seo-geo` first. Google (GA4 + Search Console) and Profound (AI answer visibility) are wired; DataForSEO and Firecrawl are gated. Never fabricate volumes, difficulty, or rankings; skip or ask the user for the data instead. Skip any trigger when the user already provided the data it would fetch.
+- **Any data skill, any stage:** confirm the backend is connected in `bolt-seo-geo` first. Google (GA4 + Search Console) is wired; DataForSEO, Firecrawl, and Profound (AI answer visibility) are not — Profound comes from a manual monthly snapshot file, so cite its date window. Never fabricate volumes, difficulty, or rankings; skip or ask the user for the data instead. Skip any trigger when the user already provided the data it would fetch.
 
 Consult `bolt-seo-geo`'s map for the exact firing conditions, the offer-based options (presented with AskUserQuestion, `multiSelect: true`), and the decision tree.

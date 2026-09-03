@@ -248,4 +248,4 @@ The full stage-by-stage tool map (pre-draft research and briefs, post-draft opti
 
 ## Brand reminder
 
-Always refer to the product as **Bolt.new**, never just "Bolt."
+Write **Bolt.new** on first mention, then **Bolt** for the rest of the post. Never "Bolt" before the full name has appeared, and give the full name to any passage that gets lifted on its own (a pull quote, a standalone FAQ answer). Source of truth: `bolt-TOV-and-guidelines` (Brand name).

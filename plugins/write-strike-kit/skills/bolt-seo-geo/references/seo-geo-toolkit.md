@@ -35,7 +35,7 @@ These fire when their stage and conditions are met **and** the data backend each
 | Content will be published on bolt.new (blog, landing page, website copy) | Generate meta title + description. Offer `/meta-tags-optimizer` for alternatives. |
 | Content includes FAQ or how-to sections | Offer `/schema-markup-generator` for FAQ, Article, or HowTo JSON-LD. |
 | Content is a blog referencing other Bolt.new content | Run `/internal-linking-optimizer` to validate link structure and anchor text. |
-| GEO priority is high (user stated it, or topic targets question/definition/comparison queries) | Run `/geo-content-optimizer` after the stop-slop audit: passage-level extractability, quotable statements, citation signals. |
+| GEO priority is high (user stated it, or topic targets question/definition/comparison queries) — and by default for every blog or website piece bound for bolt.new | Run `/aeo-craft` (Sculpt mode) after the stop-slop audit: the house AEO pass — term winnability, question tree, answer-first blocks, definitional blocks, receipts, liftable formats, FAQ, freshness, and the claim-safety glaze. Replaces the generic `/geo-content-optimizer` in this stack. For definitional/comparison pieces, also run `/aeo-craft` Plan mode BEFORE the outline is locked. |
 
 ---
 
@@ -110,7 +110,7 @@ OUTLINE APPROVED
 DRAFT COMPLETE
   └─ Will this live on bolt.new?
        ├─ Yes → meta tags, internal links
-       │    ├─ High GEO priority? → /geo-content-optimizer
+       │    ├─ AEO pass (default for bolt.new pieces) → /aeo-craft
        │    └─ Has FAQ/HowTo? → /schema-markup-generator
        └─ No (social, email, internal) → skip SEO/GEO skills
 

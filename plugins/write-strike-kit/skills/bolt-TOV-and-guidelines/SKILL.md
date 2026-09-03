@@ -47,7 +47,11 @@ Get to the point. People are busy.
 
 ### Brand name
 
-Always refer to the product as **Bolt.new**. Never just "Bolt."
+**Blogs and web pages: full name on first mention, "Bolt" after that.** Write **Bolt.new** the first time it appears on the page, including when that first mention sits in the hero, then use **Bolt** for the rest of the piece. The full name earns the search and attribution value where it counts; repeating it fifteen times in a blog post reads like a legal disclaimer.
+
+Never use "Bolt" before the full name has appeared. If a section can be lifted and read on its own (a pull quote, a hero, a standalone FAQ answer), give that section the full name.
+
+**Every other format: full name throughout.** Webinar assets, creator briefs, sales enablement, customer stories, captions, voiceover, and on-screen text keep **Bolt.new** on every mention. Those get read out of order, quoted in fragments, or seen without the rest of the page, so each mention has to carry the whole name on its own.
 
 ### Product and terminology glossary
 
@@ -55,7 +59,7 @@ The names we write, the way we write them, every time:
 
 | Term | Usage |
 |---|---|
-| **Bolt.new** | The product. Capital B, always the full name. Never "Bolt" alone. |
+| **Bolt.new** | The product. Capital B. Blogs and web pages: full name on first mention (the hero counts), "Bolt" after that. Every other format: full name every time. |
 | **StackBlitz** | The company. One word, capital S and B. |
 | **WebContainers** | The technology. One word, camel case, plural. |
 | **Skills, Slides** (feature names) | Capitalized as proper nouns. First mention ties to the product ("Bolt.new Skills"); "Skills" alone after that. |

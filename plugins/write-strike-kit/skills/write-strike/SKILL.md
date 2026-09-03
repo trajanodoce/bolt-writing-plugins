@@ -350,6 +350,7 @@ Blogs are delegated to the `bolt-blog` skill at routing (Step 1). No blog drafti
 Read `${CLAUDE_PLUGIN_ROOT}/skills/write-strike/references/web-copy-best-practices.md` before drafting any website copy. It contains the 5-question test, above-the-fold framework, headline formula, CTA specificity rules, objection handling, mobile-first writing, and page-type structure templates (homepage, feature, pricing, solution, persona, industry, and single-use landing page). GEO/AEO rules from `${CLAUDE_PLUGIN_ROOT}/skills/write-strike/references/SEO-GEO-drafting.md` also apply to any page that will live on bolt.new.
 
 Additional rules for all website copy:
+- **Product name:** **Bolt.new** on first mention on the page, including when that first mention is the hero, then **Bolt** everywhere after. See `bolt-TOV-and-guidelines` (Brand name).
 - Headline casing on heroes and headers.
 - Show the product. Screenshots, demos, real output. No stock illustrations.
 - Citations: inline and hyperlinked, never superscripts or a works-cited block. This is the default for ALL web copy; a rare page-level exception (e.g., a gated-asset download page) is a deliberate one-off, decided per piece. Label and link first-party data. Cite sparingly on conversion pages (hero, pricing, landing), more freely on content-style pages (industry, solution, persona, research hubs); keep each claim and its source in the same sentence. See bolt-TOV-and-guidelines (Bibliography and attribution).

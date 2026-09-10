@@ -13,7 +13,7 @@ This is the single source of truth for Bolt.new's written voice. Every piece of 
 
 Read this entire file before producing any written output for Bolt.new.
 
-This guide governs HOW to write. WHO you're writing for (register, reading level, jargon tolerance) lives in `bolt-buyer-personas`; read the relevant persona alongside this guide before drafting audience-targeted content.
+This guide governs HOW to write. WHO you're writing for (register, reading level, jargon tolerance) lives in `bolt-icp`; read the relevant persona alongside this guide before drafting audience-targeted content.
 
 ---
 

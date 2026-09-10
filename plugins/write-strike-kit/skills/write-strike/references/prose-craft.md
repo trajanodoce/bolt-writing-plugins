@@ -1,14 +1,22 @@
 # Prose craft: build it right the first time
 
-The generative counterpart to `bolt-stop-slop`. That skill catches what's wrong after drafting; this file is how to draft so there's less to catch. Stop-slop still runs on every piece, no exceptions. But sanding can't add life a draft never had. Flat copy that passes every filter is still flat: craft happens at generation, not correction.
+The generative counterpart to `bolt-stop-slop`. That skill's rules are pass 0 here, so they shape the draft from the first word; its audit runs after, as verification, and should find nothing. Sanding can't add life a draft never had, and a tell sanded out of a finished sentence leaves a sentence that was built around the tell. Flat copy that passes every filter is still flat: craft happens at generation, not correction.
 
-Work the passes in order. They match how a piece actually gets built: promise, lead, sentences, specifics, rhythm, thread, ending, cut. Product examples in this file are invented for teaching; never reuse them as real Bolt.new claims.
+Work the passes in order. Pass 0 is the constraint set you write inside; the rest match how a piece actually gets built: promise, lead, sentences, specifics, rhythm, thread, ending, cut. Product examples in this file are invented for teaching; never reuse them as real Bolt.new claims.
 
 ---
 
+## 0. Before anything: know the tells
+
+Stop-slop's rulebook is a drafting constraint, not an audit you meet later. Before the first sentence, have it open: the banned list in `${CLAUDE_PLUGIN_ROOT}/skills/bolt-stop-slop/references/banned.md`, the Tier 1 vocabulary and the §0 fingerprint patterns in `${CLAUDE_PLUGIN_ROOT}/skills/bolt-stop-slop/SKILL.md`, and the structural tells in `${CLAUDE_PLUGIN_ROOT}/skills/bolt-stop-slop/references/structures.md`. Read one pair in `${CLAUDE_PLUGIN_ROOT}/skills/bolt-stop-slop/references/slop-vs-gold.md` so the bar is in your ear, not only on your checklist.
+
+Then write inside the constraints. Zero em dashes, and watch what replaces them (§5 covers the colon pileup). No adverb reflex; if the verb needs propping, find a better verb (§3). No fingerprint openers, no copula costumes ("serves as," "stands as"), no compulsive-summary closers (§7). No Tier 1 vocabulary, ever, in any voice, including a team member's.
+
+The reason this is pass 0 and not a final check: a tell removed from a finished sentence leaves a sentence that was built around the tell. Copy written clean from the first word is built differently, and it reads differently. Stop-slop still runs at the end, as verification. If it finds something, the failure happened here.
+
 ## 1. Before the first sentence: the promise
 
-Write one sentence above the draft, for nobody but you: **who this is for and what they walk away with.** Not the topic. The takeaway.
+Write one sentence above the draft, for nobody but you: **who this is for and what they walk away with.** Not the topic. The takeaway. In write-strike this sentence is Step 1, answered before any intake (who, what it is for, why they should give a shit); here you carry it to the top of the draft.
 
 - Weak: "This post is about AI prototyping for enterprise teams."
 - Ready: "An enterprise PM leaves knowing the three gates that stall AI prototypes in procurement, and what to bring to each one."
@@ -79,6 +87,8 @@ Make it mechanical:
 
 **Let the paragraphs be lopsided.** The point you care about gets the long paragraph; the housekeeping gets a line. Even coverage reads as generated (stop-slop §6 demands this texture after the fact; it's cheaper to build than to retrofit).
 
+The same three rules run at outline time, on sections instead of paragraphs: one move per section, but-or-therefore joints, weight where you care. A piece drafted from an outline of and-thens will read as a list no matter how good the sentences are. write-strike Step 3 does exactly this.
+
 ## 7. The ending
 
 **End on the fact, the image, or the consequence. Never the summary.** The reader just read the piece. Summarizing it back to them is the written version of explaining the joke, and the compulsive-summary closers ("Ultimately...", "At the end of the day...") are already banned in banned.md. This is what to do instead: land something.
@@ -109,8 +119,8 @@ Track the cut rate. Under 5% means the pass didn't happen. Over 25% means draft 
 
 | File | Job | When |
 |---|---|---|
-| **prose-craft.md** (this file) | How to build prose | Draft time |
-| **bolt-stop-slop** | What broken prose looks like, and the 35/50 gate | Audit time, every piece |
+| **prose-craft.md** (this file) | How to build prose | Outline and draft time |
+| **bolt-stop-slop** | What a tell looks like (its rules), and the 35/50 gate (its audit) | Draft time via pass 0; audit time as verification |
 | **bolt-TOV-and-guidelines** | Brand voice, mechanics, the three-rules test | Always |
 | **slop-vs-gold.md** | The bar, shown not told | Read one pair pre-draft |
 | **mr-gay** | The same physics, run as diagnostics on finished drafts | Edit time |

@@ -23,7 +23,7 @@ Read this before running any data skill. The rule that matters: **if a backend i
 - **GA4** — sessions, users, engagement rate, page views, broken out by default channel group (Organic Search, Direct, Referral, etc.). Answers "how much traffic, from where, how engaged."
 - **Search Console** — impressions, clicks, CTR, average position, by query or by page. Answers "what are we ranking for and how does it perform in Google."
 
-**✅ CONNECTED (since Sep 2 2026) — AI-answer visibility, via Cairrot, not Profound.** Live AEO numbers for bolt.new — visibility, named-vs-cited, per-model breakdown, competitor leaderboard, sentiment, AI-crawler hits — now come from the **`bolt-cairrot`** skill, which pulls Cairrot's REST API read-only. **Use that skill for every AI-visibility question.** It is the sole source since Profound was retired Sep 8 2026. **Never mix Cairrot numbers with the archived Profound ones** — different methodologies over different prompt sets, not comparable (Cairrot reads bolt.new visibility around 3.2%; the retired Profound Aug 2026 snapshot read 56.2%). Always name the source and window.
+**✅ CONNECTED (since Sep 2 2026) — AI-answer visibility, via Cairrot, not Profound.** Live AEO numbers for bolt.new — visibility, named-vs-cited, per-model breakdown, competitor leaderboard, sentiment, AI-crawler hits — now come from **Cairrot**: the Cairrot MCP connector, which every teammate can add (per-user setup in `aeo-craft`), or on Taylor's machine the **`bolt-cairrot`** skill's read-only REST puller. Same API, same project, same numbers. **Use Cairrot for every AI-visibility question.** It is the sole source since Profound was retired Sep 8 2026. **Never mix Cairrot numbers with the archived Profound ones** — different methodologies over different prompt sets, not comparable (Cairrot reads bolt.new visibility around 3.2%; the retired Profound Aug 2026 snapshot read 56.2%). Always name the source and window.
 
 **🪦 RETIRED — Profound (killed Sep 8 2026):**
 - Taylor retired Profound outright. There is no API, no UI pull, no new snapshot, and no path back. **Do not read it, propose it, or treat its absence as a gap.** Every AI-visibility question now goes to `bolt-cairrot`.
@@ -94,7 +94,7 @@ Each user does this once, on their own machine, with their own Google account. I
 
 ### Profound — retired, nothing to wire
 
-Profound was retired Sep 8 2026. There is nothing to connect and nothing to restore. AI-visibility numbers come from `bolt-cairrot`, which needs only its own API key at `~/.config/claude-cairrot/config.json`.
+Profound was retired Sep 8 2026. There is nothing to connect and nothing to restore. AI-visibility numbers come from Cairrot: the MCP connector (per-user setup in `aeo-craft`) or, locally, the `bolt-cairrot` puller with its own API key at `~/.config/claude-cairrot/config.json`.
 
 **Why OAuth-as-the-user, not a service account.** A service account would need to be *added* to the GA4 property (Administrator) and Search Console (Owner). Most of us only have Editor (GA4) / Full (GSC), which can read fine through the API but can't add a service-account user. Signing in as the user sidesteps that entirely — you read through the access you already have. No admin grants required.
 

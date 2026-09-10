@@ -19,7 +19,7 @@ These fire when their stage and conditions are met **and** the data backend each
 | The user mentions a competitor by name or asks to differentiate | Run `/competitor-analysis` on the named competitor. *(Data-heavy parts need DataForSEO; the strategic read does not.)* For AI share of voice against the named competitor, run a `bolt-cairrot` competitors pull (live). |
 | Content type is blog and the piece is part of a series or hub | Run `/seo-cluster` to validate the topic-cluster structure and internal-link plan. *(Intent-only mode is safe with no backend; SERP-overlap mode needs DataForSEO.)* |
 | You need bolt.new's current traffic or search performance to ground the piece | Pull it with this skill's `ga4` / `gsc` commands (connected). |
-| GEO priority is high, the user asks where bolt.new shows up in AI answers, or an idea's "GEO opportunity" needs grounding | Run `bolt-cairrot` for visibility, named-vs-cited, per-topic and per-model breakdowns, and the competitor leaderboard, and state the window. *(Profound retired Sep 8 2026. If Cairrot returns nothing, say so. Never guess.)* |
+| GEO priority is high, the user asks where bolt.new shows up in AI answers, or an idea's "GEO opportunity" needs grounding | Pull Cairrot (the MCP connector's `search_mentions` and `search_citations`, or the `bolt-cairrot` puller) for visibility, named-vs-cited, per-topic and per-model breakdowns, and the competitor leaderboard, and state the window. *(Profound retired Sep 8 2026. If Cairrot returns nothing, say so. Never guess.)* |
 
 ### During drafting (Step 4)
 
@@ -83,7 +83,7 @@ Offer when the user shares a live URL or asks about performance:
 | Skill / source | Connects to | Status | When to use |
 |----------------|-------------|--------|-------------|
 | **bolt-seo-geo** (this skill) | GA4 + Search Console for bolt.new | ✅ connected | Real traffic and search-performance numbers for bolt.new. The default for "our actual data." |
-| **Cairrot** (`bolt-cairrot`) | AI answer visibility for bolt.new (ChatGPT, Gemini, Claude, Perplexity, AI Overviews, DeepSeek, Grok) | ✅ connected, REST puller | Visibility, named vs cited, per-topic and per-model, competitor leaderboard, sentiment, crawler hits. Profound retired Sep 8 2026. |
+| **Cairrot** (MCP connector, or `bolt-cairrot` puller) | AI answer visibility for bolt.new (ChatGPT, Gemini, Claude, Perplexity, AI Overviews, DeepSeek, Grok) | ✅ connected: MCP per user (setup in `aeo-craft`), REST puller on Taylor's machine | Visibility, named vs cited, per-topic and per-model, competitor leaderboard, sentiment, crawler hits. Profound retired Sep 8 2026. |
 | `/seo-google` | GSC, PageSpeed, CrUX, GA4 (generic) | partial | Generic Google-API skill. For bolt.new, prefer this skill's puller; `/seo-google` is for the PageSpeed/CrUX angles, which aren't wired. |
 | `/seo-dataforseo` | Live SERP, keyword metrics, backlinks | ❌ gated | Search volume, difficulty, SERP features, competitor data — only with the DataForSEO extension. |
 | `/seo-firecrawl` | Full-site crawl | ❌ gated | Site crawl, internal-link inventory — only with Firecrawl. |

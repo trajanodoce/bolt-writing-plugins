@@ -36,7 +36,7 @@ Read this before running any data skill. The rule that matters: **if a backend i
 - **Firecrawl** (full-site crawl): `/seo-firecrawl`, and the crawl steps in `/seo-audit`.
 - **PageSpeed / CrUX** (Core Web Vitals field data): not wired.
 
-**Always safe with no backend** (logic/judgment, no live data): `/content-strategy`, `/geo-content-optimizer`, `/meta-tags-optimizer`, `/schema-markup-generator`, `/internal-linking-optimizer`, `/socialize-content`, and any WebSearch-driven trend scan.
+**Always safe with no backend** (logic/judgment, no live data): `/content-strategy`, `/meta-tags-optimizer`, `/schema-markup-generator`, `/internal-linking-optimizer`, `/socialize-content`, and any WebSearch-driven trend scan. For AI-citation optimization, `aeo-craft` replaced the generic `/geo-content-optimizer` (retired Sep 2026); its Plan and Sculpt modes run without a backend, flagged blind, and only Measure needs Cairrot.
 
 Connecting DataForSEO or Firecrawl is a one-time install for whoever owns the skills, not a content task. Hand it off rather than wiring it mid-draft.
 

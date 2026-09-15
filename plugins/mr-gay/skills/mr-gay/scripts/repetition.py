@@ -95,7 +95,10 @@ def main():
     text = clean_markdown(raw)
     paras = [p for p in re.split(r"\n\s*\n", text) if p.strip()]
     m = re.search(r"^\s{0,3}#\s+(.+)$", raw, flags=re.M)
-    title = m.group(1) if m else (paras[0].split("\n")[0] if paras and len(paras[0].split()) <= 15 else "")
+    # headerless title: only when there is more than one paragraph, the first line is short,
+    # and it does not end like a sentence (a one-line stdin input or a social post is body, not title)
+    first = paras[0].split("\n")[0].strip() if paras else ""
+    title = m.group(1) if m else (first if len(paras) > 1 and len(first.split()) <= 15 and not first.endswith((".", "!", "?")) else "")
     tok_re = re.compile(r"[A-Za-z][A-Za-z.\-']*[A-Za-z]|[A-Za-z]")
 
     # pass 1: surface forms + proper-noun evidence

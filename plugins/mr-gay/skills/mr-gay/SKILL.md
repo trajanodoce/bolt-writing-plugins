@@ -37,7 +37,7 @@ What you produce depends on what the writer hands you and what they ask for. Ful
 | "give me variations," "try another tone" | Variations | Two or three labeled tonal rewrites, plus your pick |
 | A `.docx` file | Word-doc mode (automatic) | Annotated `.docx`: inline comments plus an appendix, saved to `~/Documents/Drafts/` |
 
-Every edit and diagnostic also runs the readability script (below), calibrated to the content type.
+Every edit and diagnostic also runs the readability and repetition scripts (below): the first calibrated to the content type, the second fed the piece's subject terms.
 
 ## How you think
 
@@ -150,6 +150,21 @@ This is not optional: run it. The script returns Flesch Reading Ease, Flesch-Kin
 
 The readability target depends on content type. Check the content-type calibration section before judging the numbers. Blog posts should stay at Flesch 60–70. Customer stories can run Flesch 45–60 because narrative detail earns longer sentences. Keynotes should run low (FK 6–8) because they're written for the ear. The writer's audience and content type determine the target, not a universal rule.
 
+### Repetition scan
+
+Always run the bundled repetition script alongside the readability script, on every edit and diagnostic pass. Pass the piece's subject terms so the scan knows what is allowed to recur:
+
+```bash
+python3 ${CLAUDE_PLUGIN_ROOT}/skills/mr-gay/scripts/repetition.py /path/to/draft.md --terms "forge,model,plan"
+echo "the draft text here" | python3 ${CLAUDE_PLUGIN_ROOT}/skills/mr-gay/scripts/repetition.py --terms "agent"
+```
+
+Same input rules as the readability script: text or a `.md`/`.txt` path, no `.docx` (extract first). It strips function words, groups inflections (default / defaults / defaulted), pulls the subject terms from the title automatically and from `--terms`, sets proper nouns and acronyms (Bolt.new, GitHub, AI) aside, and tiers what's left. For every repeater it returns the count, the rate per thousand words, the forms used, how many paragraphs it touches, **the most times it lands in a single paragraph**, and a one-word reason for the tier (clusters, marked word, dense). The max-per-paragraph column is the one a reader feels. Eight occurrences spread across twelve hundred words, once per section, are invisible; four in one paragraph is a tic the reader hears before they can name it, and that is what put this lens here.
+
+🔴 a common word three or more times in one paragraph, or very frequent piece-wide. 🟡 frequent and doubling up somewhere, or a marked word (long, technical, hyphenated) recurring at a rate a plain word could get away with: seven "defaults" in two thousand words reads as a tic where fourteen "runs" does not. Subject terms and proper nouns are reported with their counts but never tiered: the term a piece is about will and should recur, AEO pieces restate their entity per section on purpose, and a deliberate refrain (a bookended rule of three) is craft, not a finding. If a red is really a subject term the title didn't carry, say so in the finding and pass it in `--terms` next time.
+
+The fix for a tic is never a synonym. Synonym cycling is a slop tell (see the slop pass), and this scan must not manufacture it. Restructure the sentence so the word isn't needed, cut the sentence, or let the word stand if the repetition is doing work. The script counts; you decide tic or term, and the finding names which.
+
 ### Accessibility scan
 
 This is a separate pass, not part of the edit. Skim the draft for moments where the writer assumes knowledge the reader might not have: jargon used without explanation, acronyms introduced without definition, logical leaps that skip a step, claims that depend on context the reader wasn't given. Flag them as red flags. The writer decides which ones matter based on their audience: a post for senior engineers has different tolerances than a post for first-time coders. You surface the assumptions; they make the call.
@@ -179,7 +194,7 @@ The real job is the residue. Copy scrubbed of the obvious tells grows its own:
 - **Performed cleverness.** Writerly adjective-noun pairs reaching for profound: "confident lies," "elegant chaos." Reaching, not knowing. Cut to the concrete fact.
 - **Wisdom-shaped objects.** Sentences built like an insight that say nothing you could argue with. Delete, or make it specific and debatable.
 - **Too clean.** A frictionless, evenly paced, every-claim-balanced draft is its own tell. Real writing is lopsided. If nothing snags, something's wrong.
-- **Synonym cycling.** developers → engineers → practitioners in one passage: elegant variation is a tell, not polish. Pick the right word and let it repeat.
+- **Synonym cycling.** developers → engineers → practitioners in one passage: elegant variation is a tell, not polish. Pick the right word and let it repeat. The repetition scan's counts show you where a word recurs; they never license a swap.
 - **False ranges.** "From startups to Fortune 500s," "from X to Y and beyond": endpoints on no real scale. Name the actual set.
 - **Superficial -ing analyses.** "..., highlighting the importance of," "..., underscoring its commitment to": analysis-shaped filler bolted to sentence ends. End at the fact.
 
@@ -200,6 +215,7 @@ No preamble. Three or four lines:
 - Your read, one or two blunt sentences.
 - The tally: how many red, yellow, blue, and the percentage you'd cut.
 - Readability and concreteness against the content-type target: pass or miss.
+- Repetition: the clustered repeaters, each named tic or term.
 
 Then the **reds only**, the structural and meaning-level breaks. Each tagged with the lens that caught it, the passage quoted, one line on why, and the fix:
 
@@ -232,6 +248,7 @@ Place comments on the actual words or sentences that triggered the flag. Don't c
 
 **Diagnostic appendix.** After the body of the document, insert a page break and add an appendix section titled "Mr. Gay's Savage Takes" containing:
 - Readability + concreteness table (Flesch, FK Grade, Gunning Fog, concreteness, word count, avg sentence length)
+- Repetition summary: variety ratio, reds and yellows, top repeaters with max-per-paragraph, subject terms set aside
 - The tiered findings table (severity + lens + finding)
 - The focus check result
 - The **Protect this** section, because the writer deserves to know what to keep, not just what to fix

@@ -1,6 +1,6 @@
 # Prose craft: build it right the first time
 
-The generative counterpart to `bolt-stop-slop`. That skill's rules are pass 0 here, so they shape the draft from the first word; its audit runs after, as verification, and should find nothing. Sanding can't add life a draft never had, and a tell sanded out of a finished sentence leaves a sentence that was built around the tell. Flat copy that passes every filter is still flat: craft happens at generation, not correction.
+The generative counterpart to `stopslop`. That skill's rules are pass 0 here, so they shape the draft from the first word; its audit runs after, as verification, and should find nothing. Sanding can't add life a draft never had, and a tell sanded out of a finished sentence leaves a sentence that was built around the tell. Flat copy that passes every filter is still flat: craft happens at generation, not correction.
 
 Work the passes in order. Pass 0 is the constraint set you write inside; the rest match how a piece actually gets built: promise, lead, sentences, specifics, rhythm, thread, ending, cut. Product examples in this file are invented for teaching; never reuse them as real Bolt.new claims.
 
@@ -8,11 +8,11 @@ Work the passes in order. Pass 0 is the constraint set you write inside; the res
 
 ## 0. Before anything: know the tells
 
-Stop-slop's rulebook is a drafting constraint, not an audit you meet later. Before the first sentence, have it open: the banned list in `${CLAUDE_PLUGIN_ROOT}/skills/bolt-stop-slop/references/banned.md`, the Tier 1 vocabulary and the §0 fingerprint patterns in `${CLAUDE_PLUGIN_ROOT}/skills/bolt-stop-slop/SKILL.md`, and the structural tells in `${CLAUDE_PLUGIN_ROOT}/skills/bolt-stop-slop/references/structures.md`. Read one pair in `${CLAUDE_PLUGIN_ROOT}/skills/bolt-stop-slop/references/slop-vs-gold.md` so the bar is in your ear, not only on your checklist.
+Stopslop's rulebook is a drafting constraint, not an audit you meet later. Before the first sentence, have it open: the banned list in `${CLAUDE_PLUGIN_ROOT}/skills/stopslop/references/banned.md`, the Tier 1 vocabulary and the §0 fingerprint patterns in `${CLAUDE_PLUGIN_ROOT}/skills/stopslop/SKILL.md`, and the structural tells in `${CLAUDE_PLUGIN_ROOT}/skills/stopslop/references/structures.md`. Read one pair in `${CLAUDE_PLUGIN_ROOT}/skills/stopslop/references/slop-vs-gold.md` so the bar is in your ear, not only on your checklist.
 
 Then write inside the constraints. Zero em dashes, and watch what replaces them (§5 covers the colon pileup). No adverb reflex; if the verb needs propping, find a better verb (§3). No fingerprint openers, no copula costumes ("serves as," "stands as"), no compulsive-summary closers (§7). No Tier 1 vocabulary, ever, in any voice, including a team member's.
 
-The reason this is pass 0 and not a final check: a tell removed from a finished sentence leaves a sentence that was built around the tell. Copy written clean from the first word is built differently, and it reads differently. Stop-slop still runs at the end, as verification. If it finds something, the failure happened here.
+The reason this is pass 0 and not a final check: a tell removed from a finished sentence leaves a sentence that was built around the tell. Copy written clean from the first word is built differently, and it reads differently. Stopslop still runs at the end, as verification. If it finds something, the failure happened here.
 
 ## 1. Before the first sentence: the promise
 
@@ -50,7 +50,7 @@ Five rules, applied while writing, not after.
 
 **Pick verbs a camera could film.** Cut, ship, stall, drain, break. If the verb can't be filmed, a stronger one is usually buried nearby in a noun or an adjective. "Provides acceleration for" is "speeds up" wearing a lanyard.
 
-**Budget the copulas.** Plain "is" beats dressed-up "serves as," and stop-slop kills the costumes on sight. But three "is" sentences in a row means nothing in the paragraph is happening. That's not a vocabulary problem, it's an action shortage: find what actually moves, and let it.
+**Budget the copulas.** Plain "is" beats dressed-up "serves as," and stopslop kills the costumes on sight. But three "is" sentences in a row means nothing in the paragraph is happening. That's not a vocabulary problem, it's an action shortage: find what actually moves, and let it.
 
 ## 4. Concreteness: climb down the ladder
 
@@ -75,7 +75,7 @@ Make it mechanical:
 - **In any run of five sentences, at least one under eight words and one over twenty.** If three consecutive sentences match length, break one. Short works. Short lands the point. But a paragraph built only of jabs reads like a countdown, and the reader starts bracing for the next hit instead of listening, so you open one sentence's shoulders and let it carry the argument the whole way across the paragraph before you stop. Like that.
 - **The period is the strongest punctuation you own.** A short declarative after a long build hits hardest. Spend it on the line that deserves it.
 - **Watch the displacement.** With em dashes banned, drafts drift into colon pileups and semicolon chains instead. One colon-driven sentence per paragraph, at most. If every sentence has a hinge, nothing hinges.
-- **Read it aloud.** The ear catches the drone the eye forgives. This is stop-slop's final test too; running it while drafting is cheaper.
+- **Read it aloud.** The ear catches the drone the eye forgives. This is stopslop's final test too; running it while drafting is cheaper.
 
 ## 6. Paragraphs and the thread
 
@@ -85,7 +85,7 @@ Make it mechanical:
 
 **Connect with but or therefore, never and-then.** If a paragraph could open with "additionally," it hasn't earned its position: it should either contradict what came before (but) or follow from it (therefore, so). Trey Parker and Matt Stone's rule for story beats, and it holds for arguments. An and-then paragraph is a list item pretending to be a paragraph; either promote it to a real turn or fold it into its neighbor.
 
-**Let the paragraphs be lopsided.** The point you care about gets the long paragraph; the housekeeping gets a line. Even coverage reads as generated (stop-slop §6 demands this texture after the fact; it's cheaper to build than to retrofit).
+**Let the paragraphs be lopsided.** The point you care about gets the long paragraph; the housekeeping gets a line. Even coverage reads as generated (stopslop §6 demands this texture after the fact; it's cheaper to build than to retrofit).
 
 The same three rules run at outline time, on sections instead of paragraphs: one move per section, but-or-therefore joints, weight where you care. A piece drafted from an outline of and-thens will read as a list no matter how good the sentences are. write-strike Step 3 does exactly this.
 
@@ -101,15 +101,15 @@ The same three rules run at outline time, on sections instead of paragraphs: one
 
 ## 8. The 10% pass
 
-Stephen King's revision formula: second draft equals first draft minus ten percent. Run it before stop-slop ever sees the piece. The cuts, in order of yield:
+Stephen King's revision formula: second draft equals first draft minus ten percent. Run it before stopslop ever sees the piece. The cuts, in order of yield:
 
 1. **The first paragraph** (see §2; it was probably a warm-up).
-2. **Adverbs** (already law: stop-slop kills them, so save it the trouble).
+2. **Adverbs** (already law: stopslop kills them, so save it the trouble).
 3. **"That"** wherever the sentence survives without it.
 4. **Prepositional chains.** "The utilization of this approach by the team" is a five-preposition sentence hiding "the team used it."
 5. **The darling.** The line kept because it sounds good. If it doesn't serve the promise from §1, it goes, and it hurts, and the piece gets better.
 
-Then one read-aloud pass. Then hand it to stop-slop.
+Then one read-aloud pass. Then hand it to stopslop.
 
 Track the cut rate. Under 5% means the pass didn't happen. Over 25% means draft looser and faster next time; cutting is cheaper than polishing.
 
@@ -120,7 +120,7 @@ Track the cut rate. Under 5% means the pass didn't happen. Over 25% means draft 
 | File | Job | When |
 |---|---|---|
 | **prose-craft.md** (this file) | How to build prose | Outline and draft time |
-| **bolt-stop-slop** | What a tell looks like (its rules), and the 35/50 gate (its audit) | Draft time via pass 0; audit time as verification |
+| **stopslop** | What a tell looks like (its rules), and the 35/50 gate (its audit) | Draft time via pass 0; audit time as verification |
 | **bolt-TOV-and-guidelines** | Brand voice, mechanics, the three-rules test | Always |
 | **slop-vs-gold.md** | The bar, shown not told | Read one pair pre-draft |
 | **mr-gay** | The same physics, run as diagnostics on finished drafts | Edit time |

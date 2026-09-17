@@ -4,22 +4,22 @@ description: >
   The AEO/GEO sculpting pass for Bolt.new content: audits and reshapes a finished draft so AI answer
   engines (ChatGPT, Perplexity, Google AI Overviews, Gemini, Copilot) can find, extract, and cite it,
   and plans the citability angle before drafting starts. Run it on EVERY blog or website piece bound
-  for bolt.new after the stop-slop audit, and whenever the user says "AEO pass", "GEO pass", "aeo-craft",
+  for bolt.new after the stopslop audit, and whenever the user says "AEO pass", "GEO pass", "aeo-craft",
   "optimize for AI citations", "will AI cite this?", "is this AEO/GEO optimized?", "citability", "make
   this liftable", or asks why a page isn't showing up in AI answers. Also run the Plan mode when a new
   piece targets a definitional or question-shaped query ("what is X", comparisons, how-tos) BEFORE the
   outline is locked. This is the house replacement for the generic /geo-content-optimizer: it knows the
   Bolt.new TOV, the consent tiers, the campaign's term strategy, and the Copydesk checks panel where present. Sculpting
-  copy for machines never overrides writing for people: stop-slop and mr-gay still gate everything.
+  copy for machines never overrides writing for people: stopslop and mr-gay still gate everything.
 ---
 
 # AEO Craft
 
 The sculpting pass. Other skills make the prose good; this one makes it **citable**: findable by retrieval, extractable in standalone passages, and safe to quote. It runs on drafts, not blank pages.
 
-**Where it sits in the craft topology:** prose-craft builds prose → SEO-GEO-drafting guides searchable drafting → bolt-stop-slop catches AI tells → mr-gay diagnoses the writing → **aeo-craft sculpts for machine citability**. Read `${CLAUDE_PLUGIN_ROOT}/skills/write-strike/references/SEO-GEO-drafting.md` before running a pass: it is the rulebook this skill enforces, including the shared spine, the three tensions, and the per-engine notes (its FAST-MOVING section is the single source for engine behavior — don't duplicate it here, read it there).
+**Where it sits in the craft topology:** prose-craft builds prose → SEO-GEO-drafting guides searchable drafting → stopslop catches AI tells → mr-gay diagnoses the writing → **aeo-craft sculpts for machine citability**. Read `${CLAUDE_PLUGIN_ROOT}/skills/write-strike/references/SEO-GEO-drafting.md` before running a pass: it is the rulebook this skill enforces, including the shared spine, the three tensions, and the per-engine notes (its FAST-MOVING section is the single source for engine behavior — don't duplicate it here, read it there).
 
-**What this skill does not do:** keyword/SERP/traffic data (that's `bolt-seo-geo`, which also says what's connected — never fabricate metrics), drafting voice (bolt-TOV + prose-craft), AI-tell cleanup (bolt-stop-slop). If the draft hasn't passed stop-slop, send it there first; sculpting slop makes citable slop.
+**What this skill does not do:** keyword/SERP/traffic data (that's `bolt-seo-geo`, which also says what's connected — never fabricate metrics), drafting voice (bolt-TOV + prose-craft), AI-tell cleanup (stopslop). If the draft hasn't passed stopslop, send it there first; sculpting slop makes citable slop.
 
 ## The measurement spine
 

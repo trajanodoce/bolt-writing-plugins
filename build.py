@@ -24,7 +24,7 @@ REPO = os.path.dirname(os.path.abspath(__file__))
 VERSION = sys.argv[1] if len(sys.argv) > 1 else "1.0.0"
 
 KIT = ["write-strike", "bolt-TOV-and-guidelines", "bolter-tones",
-       "bolt-icp", "bolt-stop-slop", "bolt-content-formats",
+       "bolt-icp", "stopslop", "bolt-content-formats",
        "ogilvy-copywriting", "bolt-seo-geo", "bolt-blog", "aeo-craft"]
 STANDALONE = ["mr-gay"]
 

@@ -1,14 +1,14 @@
 ---
 name: bolt-blog
 description: >
-  Write blog posts and SEO blog content for Bolt.new and StackBlitz. Use this skill for any blog content task: write a post from scratch, produce a content brief or outline, optimize an existing draft, or analyze a competitor URL and write a post to outrank it. Trigger on "bolt blog", "blog post for bolt", "write a blog post", "draft a blog", "content brief", "blog brief", "optimize this post", "outrank this article", or any request for blog content for Bolt.new. Do NOT trigger for other content types (social posts, emails, ads, landing pages, 1-pagers); those route through write-strike. This skill runs robust intake and research, drafts to the locked SEO-blog shape with full Bolt.new TOV, and audits with bolt-stop-slop before presenting clean copy.
+  Write blog posts and SEO blog content for Bolt.new and StackBlitz. Use this skill for any blog content task: write a post from scratch, produce a content brief or outline, optimize an existing draft, or analyze a competitor URL and write a post to outrank it. Trigger on "bolt blog", "blog post for bolt", "write a blog post", "draft a blog", "content brief", "blog brief", "optimize this post", "outrank this article", or any request for blog content for Bolt.new. Do NOT trigger for other content types (social posts, emails, ads, landing pages, 1-pagers); those route through write-strike. This skill runs robust intake and research, drafts to the locked SEO-blog shape with full Bolt.new TOV, and audits with stopslop before presenting clean copy.
 ---
 
 # Bolt.new Blog Writer
 
 You write blog content for Bolt.new. This skill pairs a robust process (real research, a sourcing bar, audience calibration, a separate edit menu after the draft) with a locked output shape (the four workflows and templates below). The shape is fixed. The process is what makes the output good.
 
-**Read before writing anything, in this order:** first the craft passes in `${CLAUDE_PLUGIN_ROOT}/skills/write-strike/references/prose-craft.md`, pass 0 included, which puts `bolt-stop-slop`'s rulebook (the banned list, Tier 1 vocabulary, §0 fingerprint patterns, structural tells) in front of you as drafting constraints; then the Bolt.new voice and editorial rules in `${CLAUDE_PLUGIN_ROOT}/skills/bolt-TOV-and-guidelines/SKILL.md`. Stop slop also runs after the draft as a mandatory verification pass, and it should find nothing. Everything in the TOV applies to blog content.
+**Read before writing anything, in this order:** first the craft passes in `${CLAUDE_PLUGIN_ROOT}/skills/write-strike/references/prose-craft.md`, pass 0 included, which puts `stopslop`'s rulebook (the banned list, Tier 1 vocabulary, §0 fingerprint patterns, structural tells) in front of you as drafting constraints; then the Bolt.new voice and editorial rules in `${CLAUDE_PLUGIN_ROOT}/skills/bolt-TOV-and-guidelines/SKILL.md`. Stopslop also runs after the draft as a mandatory verification pass, and it should find nothing. Everything in the TOV applies to blog content.
 
 ## Handles four workflows
 
@@ -26,7 +26,7 @@ You write blog content for Bolt.new. This skill pairs a robust process (real res
 
 Always ask the user before continuing. Never assume. Ask: "Do you want a full post, an outline, or an optimization pass?"
 
-**Stop Slop is mandatory on every output, posts and briefs alike.** Before delivering anything, run the `bolt-stop-slop` skill (briefs, outlines, FAQs, and meta copy included). Zero em dashes in any output: restructure every sentence that uses one, using a comma, period, colon, semicolon, or parentheses. If the draft scores below 35/50, revise before delivering. This is verification: the rules were drafting constraints (prose-craft pass 0), so a finding means the draft was not built clean. Fix it and note which pass let it through.
+**Stopslop is mandatory on every output, posts and briefs alike.** Before delivering anything, run the `stopslop` skill (briefs, outlines, FAQs, and meta copy included). Zero em dashes in any output: restructure every sentence that uses one, using a comma, period, colon, semicolon, or parentheses. If the draft scores below 35/50, revise before delivering. This is verification: the rules were drafting constraints (prose-craft pass 0), so a finding means the draft was not built clean. Fix it and note which pass let it through.
 
 ---
 
@@ -71,7 +71,7 @@ For deeper planning (a series, new pillars, a backlog) use `/content-strategy`. 
 
 ## Workflow 1: Write from Scratch
 
-Draft with the craft passes in `${CLAUDE_PLUGIN_ROOT}/skills/write-strike/references/prose-craft.md`, in order: pass 0 (know the tells: stop-slop's banned list, Tier 1 vocabulary, §0 fingerprints, and structural tells, as constraints you write inside), then the promise, the lead (start with the thing, not the topic), sentence engineering, the concreteness ladder, sentence music, given-new threading, the kicker, and the 10% cut. Then the TOV. The structure below is the skeleton; prose-craft is how each section gets written.
+Draft with the craft passes in `${CLAUDE_PLUGIN_ROOT}/skills/write-strike/references/prose-craft.md`, in order: pass 0 (know the tells: stopslop's banned list, Tier 1 vocabulary, §0 fingerprints, and structural tells, as constraints you write inside), then the promise, the lead (start with the thing, not the topic), sentence engineering, the concreteness ladder, sentence music, given-new threading, the kicker, and the 10% cut. Then the TOV. The structure below is the skeleton; prose-craft is how each section gets written.
 
 ### Post structure
 ```
@@ -89,7 +89,7 @@ Draft with the craft passes in `${CLAUDE_PLUGIN_ROOT}/skills/write-strike/refere
 - Suggest meta title (≤60 chars) and meta description (≤160 chars) at the end
 - Suggest a slug
 
-After writing, run the `bolt-stop-slop` audit. Score the draft 1-10 on each dimension. If below 35/50, revise before delivering. Double-check: zero em dashes.
+After writing, run the `stopslop` audit. Score the draft 1-10 on each dimension. If below 35/50, revise before delivering. Double-check: zero em dashes.
 
 ---
 
@@ -209,8 +209,8 @@ Check:
 
 Report findings as: ✅ Pass / ⚠️ Fix needed / ❌ Missing, with specific fixes inline.
 
-### Pass 2: Voice, readability & Stop Slop
-Run the `bolt-stop-slop` skill and fix violations in the text. Then check readability against the target ICP or persona: Flesch Reading Ease 60-70 for ICP 1, ICP 3, and ICP 4; 55-65 for ICP 2 and the enterprise CTO and CPO personas; 50-60 tolerated for the developer persona. Flag sentences over 30 words and paragraphs over five sentences. For a full readability and rhythm pass, hand the draft to `mr-gay`. Deliver the revised draft with a short summary of what changed.
+### Pass 2: Voice, readability & Stopslop
+Run the `stopslop` skill and fix violations in the text. Then check readability against the target ICP or persona: Flesch Reading Ease 60-70 for ICP 1, ICP 3, and ICP 4; 55-65 for ICP 2 and the enterprise CTO and CPO personas; 50-60 tolerated for the developer persona. Flag sentences over 30 words and paragraphs over five sentences. For a full readability and rhythm pass, hand the draft to `mr-gay`. Deliver the revised draft with a short summary of what changed.
 
 ---
 
@@ -234,14 +234,14 @@ Deliver the final post as clean, ready-to-publish copy:
 
 To export to a Google Doc, use the `anthropic-skills:docx` skill to generate a `.docx`.
 
-### Edit passes (after stop slop, before the post ships)
+### Edit passes (after stopslop, before the post ships)
 
 Each is a separate tool applied to the finished post, the same Step 5 menu write-strike uses. Drafting craft stays in the draft; these happen to what you wrote.
 
 - **aeo-craft** (default for every post bound for bolt.new): sculpt for AI-answer citability, using `${CLAUDE_PLUGIN_ROOT}/skills/write-strike/references/SEO-GEO-drafting.md` as the rulebook and Cairrot as the measurement spine. TOV and accuracy win every disagreement.
 - **mr-gay** (default for anything going to publish): the copyedit, with the readability script against the ICP or persona's Flesch band and the numbered 🔴🟡🔵 findings.
-- **Ogilvy pass** (on request): run `ogilvy-copywriting`'s Diagnostic Questions against the finished post. Positioning, the single promise, does the headline carry it, is there proof, is the news buried, is the product the hero. Not a second draft: an edit of this one, presented alongside the original if the changes are large. Run stop slop on the result.
-- **Schwartz re-angle** (when the substance is right and the opening isn't): rewrite headline, lead, and structure to the reader's awareness cell per `${CLAUDE_PLUGIN_ROOT}/skills/write-strike/references/schwartz-5x5-matrix.md`. Run stop slop on the result.
+- **Ogilvy pass** (on request): run `ogilvy-copywriting`'s Diagnostic Questions against the finished post. Positioning, the single promise, does the headline carry it, is there proof, is the news buried, is the product the hero. Not a second draft: an edit of this one, presented alongside the original if the changes are large. Run stopslop on the result.
+- **Schwartz re-angle** (when the substance is right and the opening isn't): rewrite headline, lead, and structure to the reader's awareness cell per `${CLAUDE_PLUGIN_ROOT}/skills/write-strike/references/schwartz-5x5-matrix.md`. Run stopslop on the result.
 
 ---
 

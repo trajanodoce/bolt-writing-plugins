@@ -245,7 +245,7 @@ Before drafting social content, build the voice menu and ask which voice to use 
 If a person's voice is selected, read their tone profile from the file listed in that table and apply it on top of the Bolt.new editorial guidelines. The tone profile shapes how the piece sounds; the editorial guidelines still govern grammar and formatting, and Step 5 still runs in full. Ogilvy is not on this menu because it is not a voice: it is an edit pass (Step 5b) that applies on top of whichever voice the draft is in.
 
 ### Blog-specific
-Blogs are delegated to the `bolt-blog` skill at routing (Step 1). No blog drafting rules live here: bolt-blog owns the shape, citations (inline parenthetical, hyperlinked), SEO requirements, and audit. For a blog in a specific person's voice, tell bolt-blog; it reads the profile from bolter-tones.
+Blogs are delegated to the `bolt-blog` skill at routing (Step 1). No blog drafting rules live here: bolt-blog owns the shape, citations (the two-part inline format: stat phrase hyperlinked, plain "(Publisher, date)" closing the sentence), SEO requirements, and audit. For a blog in a specific person's voice, tell bolt-blog; it reads the profile from bolter-tones.
 
 ### Customer story-specific
 - Follow the nine-section structure in `${CLAUDE_PLUGIN_ROOT}/skills/bolt-content-formats/references/customer-story-template.md`.
@@ -273,7 +273,7 @@ Additional rules for all website copy:
 - **Product name:** **Bolt.new** on first mention on the page, including when that first mention is the hero, then **Bolt** everywhere after. See `bolt-TOV-and-guidelines` (Brand name).
 - Headline casing on heroes and headers.
 - Show the product. Screenshots, demos, real output. No stock illustrations.
-- Citations: inline and hyperlinked, never superscripts or a works-cited block. This is the default for ALL web copy; a rare page-level exception (e.g., a gated-asset download page) is a deliberate one-off, decided per piece. Label and link first-party data. Cite sparingly on conversion pages (hero, pricing, landing), more freely on content-style pages (industry, solution, persona, research hubs); keep each claim and its source in the same sentence. See bolt-TOV-and-guidelines (Bibliography and attribution).
+- Citations: the two-part inline format, never superscripts or a works-cited block. Hyperlink the phrase carrying the statistic, then close the sentence with a plain-text "(Publisher Name, date)". This is the default for ALL web copy; a rare page-level exception (e.g., a gated-asset download page) is a deliberate one-off, decided per piece. Label and link first-party data. Cite sparingly on conversion pages (hero, pricing, landing), more freely on content-style pages (industry, solution, persona, research hubs); keep each claim and its source in the same sentence. See bolt-TOV-and-guidelines (Bibliography and attribution).
 - **Ogilvy pass on by default** (Step 5b). Conversion copy is its home turf: positioning before promise, headline as a standalone claim, product as hero.
 
 ### Long-form-specific

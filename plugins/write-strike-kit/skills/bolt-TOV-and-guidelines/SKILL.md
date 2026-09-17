@@ -92,8 +92,21 @@ All headlines, headers, and subheads use sentence casing. Exception: website her
 **Citation format depends on the content type:**
 
 - **Long-form** (ebook, whitepaper, guide, manual, report): superscript in-text numbers tied to a **Works Cited appendix** at the end, formatted in **Chicago Manual of Style**. These are downloadable assets, so the academic treatment fits, and they are exempt from the inline-attribution rule below.
-- **Blog:** inline **parenthetical naming the source** at the end of the sentence, hyperlinked to the original. Example: "...cut onboarding time by 40% (Forrester)." No footnotes, no bibliography.
-- **Website (the default for all web copy):** inline and **hyperlinked**, never superscripts or a works-cited block. Label and link first-party data ("Based on Bolt's 2026 data" links to a methodology or report page). Cite sparingly on conversion pages (hero, pricing, landing) and more freely on content-style pages (industry, solution, persona, research hubs). Keep each claim and its source in the same sentence. Rare page-level exceptions (e.g., a gated-asset download page) are deliberate one-offs, decided per piece.
+- **All web copy (blog and website):** the two-part inline citation below. Never superscripts, footnotes, or a works-cited block.
+
+**The two-part inline citation.** Every sourced claim in web copy carries both halves:
+
+1. **Hyperlink the phrase that carries the statistic**, not the publisher's name. The anchor text is the claim itself.
+2. **Close the sentence with a plain-text parenthetical: (Publisher Name, date).** It is not hyperlinked; the link is already on the phrase.
+
+> Software spend per employee [rose 27% in 2025](https://zylo.com/research/saas-management-index) (Zylo, 2026).
+
+Both halves earn their place. The anchor text tells search and answer engines what the linked source actually says, which a bare publisher name never does. And when an AI engine lifts a passage it usually strips the markup, so the plain parenthetical is what keeps the attribution attached to the claim. Link on the phrase, name in the parens.
+
+**Per-channel notes:**
+
+- **Blog:** cite freely. Sourced statistics are the strongest AI-citation lever.
+- **Website:** cite sparingly on conversion pages (hero, pricing, landing) and more freely on content-style pages (industry, solution, persona, research hubs). Label and link first-party data ("Based on Bolt's 2026 data" links to a methodology or report page). Rare page-level exceptions (e.g., a gated-asset download page) are deliberate one-offs, decided per piece.
 
 ### Naming competitors
 We write comparison content; write it like we're confident, because we are:

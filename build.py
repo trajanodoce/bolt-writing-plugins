@@ -29,7 +29,7 @@ KIT = ["write-strike", "bolt-TOV-and-guidelines", "bolter-tones",
 STANDALONE = ["mr-gay"]
 
 EXCLUDE_NAMES  = {".DS_Store", "__pycache__", ".git"}
-EXCLUDE_SUFFIX = (".pyc",)
+EXCLUDE_SUFFIX = (".pyc", ".bak", ".orig", ".rej", ".tmp", ".save", "~")
 
 def ignore(_dir, names):
     return [n for n in names if n in EXCLUDE_NAMES or n.endswith(EXCLUDE_SUFFIX)]

@@ -55,7 +55,7 @@ Gather context before writing. Run these in parallel when possible. Don't go dow
 
 **Sourcing bar (every post).** At least two credible sources, internal or external, a mix is ideal. Always cite the origin, not the middleman: if a stat appears in a TechCrunch piece citing a Forrester report, trace it to Forrester and cite that. If you can't verify the primary source, don't use the stat.
 
-**Citation format (every post).** Inline parenthetical naming the publication at the end of the sentence, hyperlinked to the original source: "...cut onboarding time by 40% (Forrester)." No footnotes, no bibliography, no works-cited block on a blog. Chicago-style Works Cited belongs to long-form assets (guides, eBooks, reports), which route through write-strike, not here. Source of truth: bolt-TOV-and-guidelines, "Bibliography and attribution."
+**Citation format (every post).** Two parts, both required: **hyperlink the phrase that carries the statistic** (not the publisher's name), then **close the sentence with a plain-text parenthetical, "(Publisher Name, date)"**. Example: "onboarding time [dropped 40% in 2026](url) (Forrester, 2026)." The anchor text carries the claim, which is a signal a bare publisher name never sends, and the plain parenthetical keeps the attribution attached when an engine lifts the passage and strips the markup. No footnotes, no bibliography, no works-cited block on a blog. Chicago-style Works Cited belongs to long-form assets (guides, eBooks, reports), which route through write-strike, not here. Source of truth: bolt-TOV-and-guidelines, "Bibliography and attribution."
 
 **Content-strategy check.** Position the post before drafting:
 - Searchable, shareable, or both? Most Bolt.new posts are searchable first, shareable second.
@@ -84,7 +84,7 @@ Draft with the craft passes in `${CLAUDE_PLUGIN_ROOT}/skills/write-strike/refere
 ### SEO requirements baked into every post
 - Target keyword in: title, first 100 words, at least one H2, meta description
 - Related/LSI terms distributed naturally throughout
-- External citations inline and hyperlinked: parenthetical publication name at sentence end, linked to the original. No footnotes or bibliography.
+- External citations two-part: the statistic phrase hyperlinked to the origin, then a plain-text "(Publisher, date)" closing the sentence. No footnotes or bibliography.
 - Internal link opportunities noted with `[INTERNAL LINK: suggested anchor + topic]`
 - Suggest meta title (≤60 chars) and meta description (≤160 chars) at the end
 - Suggest a slug
@@ -204,7 +204,7 @@ Check:
 - Heading structure logical and keyword-aligned?
 - Internal links present with descriptive anchor text?
 - Slug clean and keyword-inclusive?
-- Citations inline + hyperlinked (parenthetical publication name)? Flag any footnotes or bibliography carried in from elsewhere.
+- Citations in the two-part format (stat phrase hyperlinked, plain "(Publisher, date)" at sentence end)? Flag a link sitting on the publisher name instead of the claim, a missing date, and any footnotes or bibliography carried in from elsewhere.
 - Any thin sections that need expanding?
 
 Report findings as: ✅ Pass / ⚠️ Fix needed / ❌ Missing, with specific fixes inline.

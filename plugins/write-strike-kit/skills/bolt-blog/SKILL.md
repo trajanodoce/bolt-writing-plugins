@@ -95,10 +95,13 @@ After writing, run the `stops-slop` audit. Score the draft 1-10 on each dimensio
 
 ## Workflow 2: Outline & Brief
 
-Deliver a structured brief the user can approve before full writing begins.
+Deliver a structured brief the user can approve before full writing begins. What they are approving is the promise, the intro angle, and the section moves, not just a list of headers.
 
 ```
 ## Content Brief: [Working Title]
+
+**The promise:** [one sentence: who this is for, beyond the keyword, and what they walk away with. Carried forward from the Step 1 promise module, not re-asked. Every section below is checked against it: anything that doesn't serve it is cut here, before it costs a draft.]
+**Purpose:** [AEO/GEO, awareness, consideration, or decision. From Step 1. Most posts are AEO/GEO with a stage, so name both.]
 
 **Target keyword:** [primary]
 **Secondary keywords:** [2-4 related terms]
@@ -134,16 +137,21 @@ Intro rules, the intro must:
 - Assume the reader already knows why the topic matters, don't spend the intro justifying it
 - Get to the point in two sentences or fewer before the first H2
 
-**H2: [Section title]**
+**H2: [Section title]** *(the move: states a claim / proves a claim / turns the argument)*
 — Key point to cover
-— Key point to cover
+— The specific it carries: the number, name, quote, or artifact
 
-**H2: [Section title]**
+**H2: [Section title]** *(the move)*
 — Key point to cover
+— The specific it carries
 
 [...continue]
 
-**Closing / CTA:** [what action the reader should take]
+Section rules, from `${CLAUDE_PLUGIN_ROOT}/skills/write-strike/references/prose-craft.md` §6 and §4: one move per section, named. Each section follows from the one before with *but* or *therefore*, never *and then*; a section that could open with "additionally" hasn't earned its slot. Every section names the specific it will carry, because a section with only a principle gives the reader nothing to hold. Let the outline be lopsided: the section you care about gets the weight.
+
+**Kicker:** [the fact, image, or consequence the post lands on. Never a summary. It will change while drafting; naming it now is what stops the post ending on a wrap-up. See prose-craft §7: the kicker is the second-best line in the piece, and the lead gets the best one.]
+
+**Closing / CTA:** [what action the reader should take. The kicker sets it up: the CTA is not the ending, the line before it is.]
 
 ---
 

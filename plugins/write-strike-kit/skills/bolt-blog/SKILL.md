@@ -242,6 +242,17 @@ Deliver the final post as clean, ready-to-publish copy:
 
 To export to a Google Doc, use the `anthropic-skills:docx` skill to generate a `.docx`.
 
+### The CMS citation manifest (every draft bound for Copydesk or Bolt CMS)
+
+Bolt CMS is agentic and reads a structured list more reliably than it parses inline markdown, so every exported draft ends with a manifest section in addition to (never instead of) the inline two-part citations:
+
+- Heading: `## Citations (CMS instructions, not for publication)`
+- One instruction line: hyperlink each exact anchor phrase inline in the body, link on the stat phrase and never the publisher name, keep the plain-text parenthetical unlinked at the end of the sentence, and do not render this section on the published page.
+- Numbered entries, one per citation: the anchor phrase (exact body text), the URL, and the parenthetical. A link that cannot resolve yet gets a TK entry with its unlock condition spelled out ("TK, the announcement post once live Sep 29").
+- A closing line listing the internal links to place where the body's [INTERNAL LINK] markers sit.
+
+Set by Taylor, Sep 28 2026 (first used on the Dokai agents post). The manifest instructs the CMS; the body still reads correctly for humans without it.
+
 ### Edit passes (after stops-slop, before the post ships)
 
 Each is a separate tool applied to the finished post, the same Step 5 menu write-strike uses. Drafting craft stays in the draft; these happen to what you wrote.

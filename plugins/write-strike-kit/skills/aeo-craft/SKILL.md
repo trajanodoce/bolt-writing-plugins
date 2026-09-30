@@ -111,7 +111,7 @@ After a Sculpt pass:
 
 1. Numbered findings (🔴/🟡/🔵, lens-tagged: Term, Tree, Answer-first, Definition, Receipts, Liftable, FAQ, Freshness, Glaze) — applied or listed, per the user's ask.
 2. The citability checklist: each of the nine passes as pass / warn / fail with one line of detail.
-3. Copydesk, where present (Taylor's local editor; the tell is a `.copydesk/` directory beside the draft in `~/Documents/Drafts`): mirror the checklist into its checks panel (`.copydesk/checks/<urlencoded-filename>.json`, shape: `{summary, updated (ms epoch), items: [{label, status, detail}]}`) and anchor pending-confirmation items as Copydesk comments so they live next to the text. Without Copydesk, put the checklist at the end of the delivered draft.
+3. Copydesk, where present (Taylor's local editor; the tell is a `.copydesk/` directory beside the draft in `~/Documents/Content/Drafts`): mirror the checklist into its checks panel (`.copydesk/checks/<urlencoded-filename>.json`, shape: `{summary, updated (ms epoch), items: [{label, status, detail}]}`) and anchor pending-confirmation items as Copydesk comments so they live next to the text. Without Copydesk, put the checklist at the end of the delivered draft.
 4. **Name the Cairrot baseline the pass targeted**: topic, named %, cited %, and the window ("browser-based full-stack app creation, named 20.6% / cited 0%, 30 days to Sep 3 2026"). If you sculpted without a pull, say so plainly.
 5. Name what was protected: honest-frictions passages, deliberate campaign refrains, and verbatim quotes are load-bearing — a pass that sands them off made the piece worse.
 

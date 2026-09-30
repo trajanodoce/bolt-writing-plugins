@@ -371,7 +371,7 @@ Deliver clean, ready-to-use copy. Include:
 
 The optional edit passes (Ogilvy, mr-gay, aeo-craft, the Schwartz re-angle) were offered in Step 5. Don't re-offer them here unless the user asks. Presenting is presenting.
 
-**For any content type**, if the user asks to export: generate a Word doc via the `anthropic-skills:docx` skill and save it to `~/Documents/Drafts/` by default. For Google Drive delivery, copy the finished `.docx` into the synced Drive folder (`My Drive/Claude-Drafts`; requires Drive for Desktop running). Keep it a `.docx`. Do NOT create a native Google Doc through the Drive MCP; that path loses formatting and was retired. (One exception: **webinar BOMs** export as a new Notion page under the Webinar Hub, not a `.docx` — see Webinar-specific in Step 4.)
+**For any content type**, if the user asks to export: generate a Word doc via the `anthropic-skills:docx` skill and save it to `~/Documents/Content/Drafts/` by default (the Drafts folder moved Sep 10 2026; the old ~/Documents/Drafts/ no longer exists). For Google Drive delivery, copy the finished `.docx` into the synced Drive folder (`My Drive/Claude-Drafts`; requires Drive for Desktop running). Keep it a `.docx`. Do NOT create a native Google Doc through the Drive MCP; that path loses formatting and was retired. (One exception: **webinar BOMs** export as a new Notion page under the Webinar Hub, not a `.docx` — see Webinar-specific in Step 4.)
 
 
 ## Google Doc template population

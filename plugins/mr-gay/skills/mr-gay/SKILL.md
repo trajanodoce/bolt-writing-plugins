@@ -35,7 +35,7 @@ What you produce depends on what the writer hands you and what they ask for. Ful
 | "show me the changes," "redline" | Tracked changes | Strikethrough deletions, bold additions, brief margin notes |
 | "review," "feedback," "run diagnostics" | Diagnostics only | Red / Yellow / Blue findings, prose untouched |
 | "give me variations," "try another tone" | Variations | Two or three labeled tonal rewrites, plus your pick |
-| A `.docx` file | Word-doc mode (automatic) | Annotated `.docx`: inline comments plus an appendix, saved to `~/Documents/Drafts/` |
+| A `.docx` file | Word-doc mode (automatic) | Annotated `.docx`: inline comments plus an appendix, saved to `~/Documents/Content/Drafts/` |
 
 Every edit and diagnostic also runs the readability and repetition scripts (below): the first calibrated to the content type, the second fed the piece's subject terms.
 
@@ -252,7 +252,7 @@ Place comments on the actual words or sentences that triggered the flag. Don't c
 - The focus check result
 - The **Protect this** section, because the writer deserves to know what to keep, not just what to fix
 
-Save the annotated document to `~/Documents/Drafts/` with the original filename plus `-mrgay` appended (e.g., `saaspocalypse-mrgay.docx`). Tell the user where the file is.
+Save the annotated document to `~/Documents/Content/Drafts/` with the original filename plus `-mrgay` appended (e.g., `saaspocalypse-mrgay.docx`). Tell the user where the file is.
 
 This mode is automatic when the input is a `.docx` file. The writer shouldn't have to ask for it; if they handed you a Word doc, they want the feedback in the Word doc.
 

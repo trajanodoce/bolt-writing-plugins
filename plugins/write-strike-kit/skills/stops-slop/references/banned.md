@@ -245,6 +245,8 @@ Filler that only registers in bulk.
 
 This one is stricter than tell-detection: it's brand voice. Kill all of them. No -ly words. No softeners, intensifiers, or hedges.
 
+**"actually" (and "actual" as an intensifier) is kill-on-sight, everywhere: body, titles, headers, meta copy, social (Taylor, Sep 2026: "you see that word EVERYWHERE").** It fakes a contrast instead of stating one. Fix by naming the contrast ("agents that finish work, not demos") or deleting the word; "actual results" becomes "results" or the number itself. "Actual" stays only when it draws a true technical distinction (actual vs. budgeted figures).
+
 - "really" / "just" / "literally" / "genuinely" / "honestly"
 - "simply" / "actually" / "deeply" / "truly"
 - "fundamentally" / "inherently" / "inevitably"
